@@ -14,6 +14,6 @@ There is no advanced exercise week 15.
 
 Assignments and grading policies are on the course website:
 
-https://c4cs.github.io/#syllabus-advanced
+https://unixlab1980.github.io/#syllabus-advanced
 
 - c4cs staff

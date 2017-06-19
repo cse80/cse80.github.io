@@ -59,7 +59,7 @@ class: center, middle
 # Really Today's Definitions
 
 ### - Virtual Private Servers (VPS)
-- [Homework 1!](https://c4cs.github.io/static/w17/hw/c4cs-wk1-homework.pdf)
+- [Homework 1!](https://unixlab1980.github.io/static/w17/hw/c4cs-wk1-homework.pdf)
 
 ### - Pluggable Authentication Modules (PAM)
 ### - Secure SHell (SSH)
@@ -69,7 +69,7 @@ class: center, middle
 # Really Today's Definitions
 
 ### - Virtual Private Servers (VPS)
-- [Homework 1!](https://c4cs.github.io/static/w17/hw/c4cs-wk1-homework.pdf)
+- [Homework 1!](https://unixlab1980.github.io/static/w17/hw/c4cs-wk1-homework.pdf)
 
 ### - Pluggable Authentication Modules (PAM)
 ### - Secure SHell (SSH)
@@ -114,7 +114,7 @@ class: center, middle
 
 
 ## Dotfiles
-- [Homework 12!](http://c4cs.github.io/static/w17/hw/c4cs-wk12-homework.pdf)
+- [Homework 12!](http://unixlab1980.github.io/static/w17/hw/c4cs-wk12-homework.pdf)
 
 ---
 
@@ -124,7 +124,7 @@ class: center, middle
 
 
 ## Dotfiles
-- [Homework 12!](http://c4cs.github.io/static/w17/hw/c4cs-wk12-homework.pdf)
+- [Homework 12!](http://unixlab1980.github.io/static/w17/hw/c4cs-wk12-homework.pdf)
 
 
 ## `~/.ssh/config`
@@ -146,7 +146,7 @@ Host c4cs-lecture
 
 # Make and `Makefile`s
 
-- [Homework 7!](https://c4cs.github.io/static/w17/hw/c4cs-wk7-homework.pdf)
+- [Homework 7!](https://unixlab1980.github.io/static/w17/hw/c4cs-wk7-homework.pdf)
 
 ---
 
@@ -187,7 +187,7 @@ done < "usernames.txt"
 ```
 
 - [Regular and Advanced Homework 3](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
-- [Advanced Homework 6](https://c4cs.github.io/static/w17/advanced/c4cs-wk6-advanced.pdf)
+- [Advanced Homework 6](https://unixlab1980.github.io/static/w17/advanced/c4cs-wk6-advanced.pdf)
 
 ---
 

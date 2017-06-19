@@ -1,11 +1,11 @@
 # Computing for Computer Scientists
 
-[![Build Status](https://travis-ci.org/c4cs/c4cs.github.io.svg?branch=master)](https://travis-ci.org/c4cs/c4cs.github.io)
+[![Build Status](https://travis-ci.org/c4cs/unixlab1980.github.io.svg?branch=master)](https://travis-ci.org/c4cs/unixlab1980.github.io)
 
 This repository holds the sources for the course homepage for Computing for Computer Scientists,
 a course for early-career EECS students at the University of Michigan.
 
-For more information, visit the course homepage: [https://c4cs.github.io]()
+For more information, visit the course homepage: [https://unixlab1980.github.io]()
 
 ## Contributing
 
@@ -38,13 +38,13 @@ After making a change and verifying that it works, please submit a [pull request
 
 [GitHub Pages]: https://pages.github.com/
 [Jekyll]: https://jekyllrb.com/
-[open issues]: https://github.com/c4cs/c4cs.github.io/issues
-[new issue]: https://github.com/c4cs/c4cs.github.io/issues/new
+[open issues]: https://github.com/unixlab1980/unixlab1980.github.io/issues
+[new issue]: https://github.com/unixlab1980/unixlab1980.github.io/issues/new
 [Markdown]: http://daringfireball.net/projects/markdown/
-[reference page]: https://c4cs.github.io/reference
+[reference page]: https://unixlab1980.github.io/reference
 [ruby]: https://www.ruby-lang.org/en/
 [bundler]: https://bundler.io/
 [gh docs]:https://help.github.com/articles/using-jekyll-with-pages/
 [jekyll docs]: https://jekyllrb.com/docs/home/
-[pull request]: https://github.com/c4cs/c4cs.github.io/pulls
-[Homebrew]: https://c4cs.github.io/commands/brew
+[pull request]: https://github.com/unixlab1980/unixlab1980.github.io/pulls
+[Homebrew]: https://unixlab1980.github.io/commands/brew
