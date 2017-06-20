@@ -3,13 +3,12 @@ layout: default
 ---
 
 <div class="jumbotron">
-  <p>This 1-credit seminar is designed to teach the essentials of using a
-  computer effectively for EECS students. While the target audience is CS/CE/DS
-  students, any student wishing to learn how to use their computer much more
-  effectively is encouraged to join. Topics covered include shells, environment,
-  scripting, Makefiles, compilers, debugging tools, and version control. The
-  end of the course will be open to student input for interesting topics to
-  cover.</p>
+  <p> This 2-unit course aims to teach some essential skills for all Computer
+  Scientists that you'll use throughout your classes, into industry and beyond.
+  The class approaches the Unix Command Line Interface (CLI) as a primary tool
+  for computing, and covers techniques that turn the CLI into a powerful,
+  flexible and extensible toolkit, adding useful historical context along the
+  way. </p>
 </div>
 
 <div class="alert alert-info">
@@ -18,7 +17,7 @@ layout: default
   {% comment %} Do math on unix timstamps to process in liquid {% endcomment %}
   {% assign onemonthago = 'now' | date: '%s' | minus: 2592000 %}
   {% for update in site.updates %}
-    {% if update.categories contains 'w17' %}
+    {% if update.categories contains 'su17' %}
       {% comment %} No int filter, use benign math to coerce from string {% endcomment %}
       {% assign update_date = update.date | date: '%s' | times: 1 %}
       {% if update_date > onemonthago %}
@@ -32,7 +31,7 @@ layout: default
   <div id="old-updates" style="display: none">
 
     {% for update in site.updates %}
-      {% if update.categories contains 'w17' %}
+      {% if update.categories contains 'su17' %}
         {% comment %} No int filter, use benign math to coerce from string {% endcomment %}
         {% assign update_date = update.date | date: '%s' | times: 1 %}
         {% if update_date <= onemonthago %}
@@ -50,14 +49,12 @@ layout: default
 {% assign anchor_name="prereqs" %}
 {% assign anchor_html_entity="h2" %}
 {% include anchor.html %}
-<p>The only enforced pre-requisite for this course is ENGN&nbsp;101/151 or
-EECS&nbsp;182/183, however it is strongly advised that students have either
-taken or are concurrently enrolled in EECS&nbsp;280.</p>
-<p>It is expected that students are currently enrolled in at least one course
-involving non-trivial software projects (e.g. EECS&nbsp;280 or 281). If you are
-not enrolled in a programming course this term, you must have previously taken a
-programming course where you still have access to the projects you have
-completed.</p>
+<p>Previous experience with the command line is not required. Indeed, if you feel
+comfortable on the command line, this is not the class for you!</p>
+<p>We encourage students to have taken at least 1 other CS course (typically 8
+or 11) prior to 80 as knowledge of introductory programming and computer
+terminology is expected.</p>
+
 
 {% assign anchor_text="Syllabus &amp; Essential Info" %}
 {% assign anchor_name="syllabus" %}
@@ -68,31 +65,24 @@ completed.</p>
 {% assign anchor_html_entity="h3" %}
 {% include anchor.html %}
 <p>
-For general issues, e-mail the course staff at <a href="mailto:c4cs-staff@umich.edu">c4cs-staff@umich.edu</a>.
-For sensitive issues, please e-mail Marcus directly.
+For any issues, e-mail the course staff at the emails listed below.
 </p>
 <div class="table-responsive">
   <table class="table staff-table">
     <tr>
-      <td><img alt="@marcus-darden" class="avatar" src="https://avatars1.githubusercontent.com/u/1323862?v=3&amp;s=120"></td>
-      <td><img src="/static/img/mterwil-square.jpg"  alt="Matt Terwilliger" /></td>
-      <td><img src="/static/img/thealex-square.jpg"  alt="Alex Chojnacki"   /></td>
-      <td><img src="/static/img/cgagnon-square.jpg"  alt="Cameron Gagnon"   /></td>
-      <td><img src="/static/img/ankshah-square.jpg"  alt="Ankit Shah"       /></td>
+      <td><img src="/static/img/jdeblasio.png"  alt="Joe DeBlasio"></td>
+      <td><img src="/static/img/dkohlbre.jpg"  alt="David Kohlbrenner" /></td>
+      <td><img src="/static/img/scauligi.png"  alt="Sunjay Cauligi"   /></td>
     </tr>
     <tr>
-      <td>Marcus Darden</td>
-      <td>Matt Terwilliger</td>
-      <td>Alex Chojnacki</td>
-      <td>Cameron Gagnon</td>
-      <td>Ankit Shah</td>
+      <td>Joe DeBlasio</td>
+      <td>David Kohlbrenner</td>
+      <td>Sunjay Cauligi</td>
     </tr>
     <tr>
-      <td><a href="mailto:mmdarden@umich.edu">mmdarden@umich.edu</a></td>
-      <td><a href="mailto:mterwil@umich.edu">mterwil@umich.edu</a></td>
-      <td><a href="mailto:thealex@umich.edu">thealex@umich.edu</a></td>
-      <td><a href="mailto:cgagnon@umich.edu">cgagnon@umich.edu</a></td>
-      <td><a href="mailto:ankshah@umich.edu">ankshah@umich.edu</a></td>
+      <td><a href="mailto:tbd@eng.ucsd.edu">tbd@eng.ucsd.edu</a></td>
+      <td><a href="mailto:tbd@eng.ucsd.edu">tbd@eng.ucsd.edu</a></td>
+      <td><a href="mailto:tbd@eng.ucsd.edu">tbd@eng.ucsd.edu</a></td>
     </tr>
   </table>
 </div>
@@ -100,33 +90,38 @@ For sensitive issues, please e-mail Marcus directly.
 {% assign anchor_text="Course Resources" %}
 {% assign anchor_name="resources" %}
 {% include anchor.html %}
+TBD
+<!--
 <h4>Course Q&amp;A / Forum &ndash; <a href="https://piazza.com/class/ixgsfwif4f35is" target="_blank">Piazza</a></h4>
 <h4>Assignment Submission &amp; Grades &ndash; <a
         href="https://gradescope.com/courses/5574" target="_blank">Gradescope</a></h4>
 <ul><li>Gradescope entry code: <code>MX54N9</code></li></ul>
+-->
 <!--
 <p>For most questions, please use <a href="https://piazza.com/class/ij1jghks3dr59n" target="_blank">piazza</a>
 so that all students may benefit from the question and answer. To reach the course staff, please e-mail
 <a href="mailto:c4cs-staff@umich.edu">c4cs-staff@umich.edu</a>.
 -->
-<p>To borrow a CSE laptop for the semester, contact Don Winsor at <a href="mailto:don@umich.edu">don@umich.edu</a>.</p>
 
 {% assign anchor_text="Course Meeting Times and Locations" %}
 {% assign anchor_name="times" %}
 {% include anchor.html %}
 <dl class="dl-horizontal">
-  <dt>Section 003 (28920)</dt>
-  <dd>1670 BBB, Friday 1:30PM &mdash; 3:00PM</dd>
-  <dt>Section 004 (28657)</dt>
-  <dd>AUD CHRYS, Friday 10:00AM &mdash; 11:30AM</dd>
+  <dt>Lecture</dt>
+  <dd>CSE B220, Mon/Wed 10:00AM &mdash; 12:00PM</dd>
+  <dt>Lab (optional)</dt>
+  <dd>CSE B220, Mon/Wed 12:00PM &mdash; 1:50PM</dd>
 </dl>
-<p>In general, you may attend any section, however if the classrooms become
-overfull, we will have to ask that you attend the section you are officially
-registered for.</p>
+<p>The class will take the form of intermixed lectures and
+terminal-based interactive exercises. This is a 2-unit course, and will meet
+for approximately two hours, twice a week. Lab time is available
+to work on assignments and get additional help from the instructors.</p>
 
+<!--
 <div id='calendar-loading'>Loading calendar...</div>
 <div id='calendar'></div>
 <a href="https://calendar.google.com/calendar/embed?src=4a0vvtkg11f6g0qs2er37gkkf8%40group.calendar.google.com&ctz=America/New_York" class="pull-right" target="_blank">Google Calendar link</a>
+-->
 
 {% assign anchor_text="Schedule" %}
 {% assign anchor_name="schedule" %}
@@ -145,7 +140,7 @@ registered for.</p>
       <th style="min-width: 400px;">Lecture Materials</th>
     </tr>
     {% for week in site.syllabus %}
-      {% if week.categories contains 'w17' %}
+      {% if week.categories contains 'su17' %}
         {{ week.output }}
       {% endif %}
     {% endfor %}

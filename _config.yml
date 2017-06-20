@@ -63,6 +63,18 @@ defaults:
     values:
       category: w17
   - scope:
+      path: "_lectures/su17"
+    values:
+      category: su17
+  - scope:
+      path: "_updates/su17"
+    values:
+      category: su17
+  - scope:
+      path: "_syllabus/su17"
+    values:
+      category: su17
+  - scope:
       type: commands
     values:
       layout: reference
