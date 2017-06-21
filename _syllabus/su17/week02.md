@@ -1,10 +1,10 @@
 ---
 week: 2
-dates: 01/13/2017
-lecturer: mmdarden
-homeworkRelease: 2017-01-13 15:00:00
-solutionRelease: 2017-01-20 22:00:00
-title: "Basic Git"
+dates: 07/05/2017
+homeworkRelease: 2017-07-05 12:00:00
+solutionRelease: 2017-07-07 22:00:00
+homeworkTBD: true
+title: "Shells and Editors"
 # lectureTopics:
 #   - TBD
 # homeworkTopics:
@@ -12,6 +12,4 @@ title: "Basic Git"
 # advancedTopics:
 #   - TBD
 lectureSummary:
-leccapWed:
-leccapFri:
 ---

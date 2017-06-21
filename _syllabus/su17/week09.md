@@ -1,10 +1,10 @@
 ---
 week: 9
-dates: 03/03/2017
-lecturer: mmdarden
-homeworkRelease: 2017-03-03 15:00:00
-solutionRelease: 2017-03-10 22:00:00
-title: "Spring break no lecture"
+dates: 07/31/2017
+homeworkRelease: 2017-07-31 12:00:00
+solutionRelease: 2017-08-02 22:00:00
+homeworkTBD: true
+title: "How to Fix Problems"
 # lectureTopics:
 #   - TBD
 # homeworkTopics:
@@ -12,6 +12,4 @@ title: "Spring break no lecture"
 # advancedTopics:
 #   - TBD
 lectureSummary:
-leccapWed:
-leccapFri:
 ---

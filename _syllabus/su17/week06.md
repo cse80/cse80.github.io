@@ -1,10 +1,10 @@
 ---
 week: 6
-dates: 02/10/2017
-lecturer: mmdarden
-homeworkRelease: 2017-02-10 15:00:00
-solutionRelease: 2017-02-17 22:00:00
-title: "Unix II"
+dates: 07/19/2017
+homeworkRelease: 2017-07-19 12:00:00
+solutionRelease: 2017-07-21 22:00:00
+homeworkTBD: true
+title: "Quiz & Office Hours++"
 # lectureTopics:
 #   - TBD
 # homeworkTopics:
@@ -12,6 +12,4 @@ title: "Unix II"
 # advancedTopics:
 #   - TBD
 lectureSummary:
-leccapWed:
-leccapFri:
 ---

@@ -1,10 +1,10 @@
 ---
 week: 4
-dates: 01/27/2017
-lecturer: mmdarden
-homeworkRelease: 2017-01-27 15:00:00
-solutionRelease: 2017-02-03 22:00:00
-title: "Editors"
+dates: 07/12/2017
+homeworkRelease: 2017-07-12 12:00:00
+solutionRelease: 2017-07-14 22:00:00
+homeworkTBD: true
+title: "Git"
 # lectureTopics:
 #   - TBD
 # homeworkTopics:
@@ -12,6 +12,4 @@ title: "Editors"
 # advancedTopics:
 #   - TBD
 lectureSummary:
-leccapWed:
-leccapFri:
 ---

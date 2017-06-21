@@ -1,10 +1,10 @@
 ---
 week: 3
-dates: 01/20/2017
-lecturer: mmdarden
-homeworkRelease: 2017-01-20 15:00:00
-solutionRelease: 2017-01-27 22:00:00
-title: "Shells, Environment, Scripting, and Bash"
+dates: 07/10/2017
+homeworkRelease: 2017-07-10 12:00:00
+solutionRelease: 2017-07-12 22:00:00
+homeworkTBD: true
+title: "Pipelining, Regex, and Scripting"
 # lectureTopics:
 #   - TBD
 # homeworkTopics:
@@ -12,6 +12,4 @@ title: "Shells, Environment, Scripting, and Bash"
 # advancedTopics:
 #   - TBD
 lectureSummary:
-leccapWed:
-leccapFri:
 ---

@@ -1,10 +1,10 @@
 ---
 week: 8
-dates: 02/24/2017
-lecturer: mmdarden
-homeworkRelease: 2017-02-24 15:00:00
-solutionRelease: 2017-03-03 22:00:00
-title: "Optional Lecture: TBD"
+dates: 07/26/2017
+homeworkRelease: 2017-07-26 12:00:00
+solutionRelease: 2017-07-28 22:00:00
+homeworkTBD: true
+title: "Productivity in the Terminal"
 # lectureTopics:
 #   - TBD
 # homeworkTopics:
@@ -12,6 +12,4 @@ title: "Optional Lecture: TBD"
 # advancedTopics:
 #   - TBD
 lectureSummary:
-leccapWed:
-leccapFri:
 ---

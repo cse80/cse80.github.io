@@ -1,10 +1,10 @@
 ---
 week: 10
-dates: 03/10/2017
-lecturer: mmdarden
-homeworkRelease: 2017-03-10 15:00:00
-solutionRelease: 2017-03-17 22:00:00
-title: "Unit Testing and Python"
+dates: 08/02/2017
+homeworkRelease: 2017-08-02 12:00:00
+solutionRelease: 2017-08-04 22:00:00
+homeworkTBD: true
+title: "System Administration"
 # lectureTopics:
 #   - TBD
 # homeworkTopics:
@@ -12,6 +12,4 @@ title: "Unit Testing and Python"
 # advancedTopics:
 #   - TBD
 lectureSummary:
-leccapWed:
-leccapFri:
 ---

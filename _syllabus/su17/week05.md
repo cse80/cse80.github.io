@@ -1,10 +1,10 @@
 ---
 week: 5
-dates: 02/03/2017
-lecturer: mmdarden
-homeworkRelease: 2017-02-03 15:00:00
-solutionRelease: 2017-02-10 22:00:00
-title: "Git II"
+dates: 07/17/2017
+homeworkRelease: 2017-07-17 12:00:00
+solutionRelease: 2017-07-19 22:00:00
+homeworkTBD: true
+title: "Everything is a File"
 # lectureTopics:
 #   - TBD
 # homeworkTopics:
@@ -12,6 +12,4 @@ title: "Git II"
 # advancedTopics:
 #   - TBD
 lectureSummary:
-leccapWed:
-leccapFri:
 ---

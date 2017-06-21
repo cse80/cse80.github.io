@@ -4,7 +4,7 @@
   </tr>
 {% endif %}
 <tr>
-  <th class="week">Week&nbsp;{{ page.week }}</th>
+  <th class="week">Lecture&nbsp;{{ page.week }}</th>
   <td>{{ page.dates }}</td>
   <td rowspan="3">
     <strong>{{ page.title | markdownify }}</strong>
@@ -55,18 +55,6 @@
       <a href="lectures/{{ page.slidesName }}.pdf">[pdf]</a>
       </p>
     {% endif %}
-    {% if page.leccapWed %}
-      <p>Morning Lecture</p>
-      <ul>
-        <li><a class="leccap" href="http://leccap.engin.umich.edu/leccap/viewer/r/{{ page.leccapWed }}" target="_blank">Lecture Video</a></li>
-      </ul>
-    {% endif %}
-    {% if page.leccapFri %}
-      <p>Afternoon Lecture</p>
-      <ul>
-        <li><a class="leccap" href="http://leccap.engin.umich.edu/leccap/viewer/r/{{ page.leccapFri }}" target="_blank">Lecture Video</a></li>
-      </ul>
-    {% endif %}
     {% if page.commands %}
       <hr />
       {% for command in page.commands %}
@@ -80,15 +68,17 @@
   </td>
 </tr>
 <tr>
-  <td colspan="2">
+  <!--td colspan="2">
     {% for lecturer in page.lecturer %}
       <p><em>{{ lecturer }}</em></p>
     {% endfor %}
-  </td>
+  </td-->
 </tr>
 <tr>
   <td colspan="2" class="syllabus-homework">
-    {% if page.homeworkRelease %}
+    {% if page.homeworkTBD %}
+      <p>Homework TBD</p>
+    {% elsif page.homeworkRelease %}
       {% assign now = 'now' | date: '%s' | times: 1 %}
       {% assign homeworkRelease = page.homeworkRelease | date: '%s' | times: 1 %}
       {% if now > homeworkRelease %}
@@ -110,7 +100,7 @@
         {% endif %}
       {% endif %}
     {% else %}
-      <p>No homework this week!</p>
+      <p>No homework!</p>
     {% endif %}
   </td>
 </tr>
