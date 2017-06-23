@@ -1,7 +1,5 @@
 # Computing for Computer Scientists
 
-[![Build Status](https://travis-ci.org/c4cs/unixlab1980.github.io.svg?branch=master)](https://travis-ci.org/c4cs/unixlab1980.github.io)
-
 This repository holds the sources for the course homepage for CSE80 ("Unix
 Lab"), a course for early-career CS students at the UC San Diego.
 
@@ -47,4 +45,3 @@ This site for CSE80 is based on the site for <a href="https://c4cs.github.io">C4
 [gh docs]:https://help.github.com/articles/using-jekyll-with-pages/
 [jekyll docs]: https://jekyllrb.com/docs/home/
 [pull request]: https://github.com/unixlab1980/unixlab1980.github.io/pulls
-[Homebrew]: https://unixlab1980.github.io/commands/brew

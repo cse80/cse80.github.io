@@ -1,16 +1,14 @@
 title: Computing for Computer Scientists
-email: ppannuto@umich.edu
+email: scauligi@eng.ucsd.edu
 description: > # this means to ignore newlines until "url:"
-  This 1-credit seminar is designed to teach the essentials of using a computer
-  effectively for EECS students. While the target audience is CS/CE/DS
-  students, any student wishing to learn how to use their computer much more
-  effectively is encouraged to join. Topics covered include shells,
-  environment, scripting, Makefiles, compilers, debugging tools, and version
-  control. The last month of the course will be open to student input for
-  remaining useful topics to cover.
-url: "https://unixlab1980.github.io" # the base hostname & protocol for your site
+  This 2-unit course aims to teach some essential skills for all Computer
+  Scientists that you'll use throughout your classes, into industry and beyond.
+  The class approaches the Unix Command Line Interface (CLI) as a primary tool
+  for computing, and covers techniques that turn the CLI into a powerful,
+  flexible and extensible toolkit, adding useful historical context along the way.
+url: "https://cse80.github.io" # the base hostname & protocol for your site
 
-timezone: America/Detroit
+timezone: America/Los_Angeles
 
 permalink: none
 
