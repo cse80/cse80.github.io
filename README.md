@@ -2,16 +2,16 @@
 
 [![Build Status](https://travis-ci.org/c4cs/unixlab1980.github.io.svg?branch=master)](https://travis-ci.org/c4cs/unixlab1980.github.io)
 
-This repository holds the sources for the course homepage for Computing for Computer Scientists,
-a course for early-career EECS students at the University of Michigan.
+This repository holds the sources for the course homepage for CSE80 ("Unix
+Lab"), a course for early-career CS students at the UC San Diego.
 
-For more information, visit the course homepage: <https://unixlab1980.github.io>
+For more information, visit the course homepage: <https://cse80.github.io>
 
 ## Contributing
 
 The site itself uses [GitHub Pages][] and [Jekyll][].
 
-Before contributing, please check [open issues][] and create a [new issue][] if a one for your proposed contribution does not exist.
+Before contributing, please check [open issues][] and create a [new issue][] if one for your proposed contribution does not exist.
 
 Content for the website is written in [Markdown][].
 To contribute to the [reference page][], navigate to `_commands/` and then to the specific section and edit an existing `.md` file or create a new one.
@@ -33,8 +33,8 @@ After making a change and verifying that it works, please submit a [pull request
 
 ---------------------
 
-<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Computing for Computer Scientists</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://patpannuto.com" property="cc:attributionName" rel="cc:attributionURL">Pat Pannuto</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
-
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />
+This site for CSE80 is based on the site for <a href="https://c4cs.github.io">C4CS</a>, and shares the <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
 
 [GitHub Pages]: https://pages.github.com/
 [Jekyll]: https://jekyllrb.com/
