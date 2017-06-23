@@ -4,13 +4,21 @@ dates: 07/03/2017
 homeworkRelease: 2017-07-03 12:00:00
 solutionRelease: 2017-07-05 22:00:00
 homeworkTBD: true
-title: "Introduction, Setup, and History"
+title: "Introduction and Setup"
 lectureTopics:
-  - Fill
-  - these
-  - sub: and the rest
-  - sub: too
-  - out
+  - Intro and syllabus
+  - What is the command line?
+  - History of terminals
+  - Basic shell
+#commands:
+#  - pwd
+#  - ls
+#  - cd
+#  - mkdir
+#  - mv
+#  - rmdir
+#  - rm
+#  - man
 # homeworkTopics:
 #   - TBD
 # advancedTopics:
