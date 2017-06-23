@@ -21,7 +21,7 @@ Lecture this week will use the whiteboard during class.
 
 These slides capture the lecture notes / plan.
 
-We will also post some supplemental material on the [course homepage](https://unixlab1980.github.io/#schedule)
+We will also post some supplemental material on the [course homepage](https://cse80.github.io/#schedule)
 
 
 ---

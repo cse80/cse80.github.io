@@ -36,12 +36,12 @@ This site for CSE80 is based on the site for <a href="https://c4cs.github.io">C4
 
 [GitHub Pages]: https://pages.github.com/
 [Jekyll]: https://jekyllrb.com/
-[open issues]: https://github.com/unixlab1980/unixlab1980.github.io/issues
-[new issue]: https://github.com/unixlab1980/unixlab1980.github.io/issues/new
+[open issues]: https://github.com/cse80/cse80.github.io/issues
+[new issue]: https://github.com/cse80/cse80.github.io/issues/new
 [Markdown]: http://daringfireball.net/projects/markdown/
-[reference page]: https://unixlab1980.github.io/reference
+[reference page]: https://cse80.github.io/reference
 [ruby]: https://www.ruby-lang.org/en/
 [bundler]: https://bundler.io/
 [gh docs]:https://help.github.com/articles/using-jekyll-with-pages/
 [jekyll docs]: https://jekyllrb.com/docs/home/
-[pull request]: https://github.com/unixlab1980/unixlab1980.github.io/pulls
+[pull request]: https://github.com/cse80/cse80.github.io/pulls

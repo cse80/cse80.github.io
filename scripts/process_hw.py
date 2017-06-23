@@ -140,7 +140,7 @@ Your Homework {week} for {klass} {term} has been graded!
 
 ---
 
-A reminder on Homework scoring: https://unixlab1980.github.io/#syllabus-homework
+A reminder on Homework scoring: https://cse80.github.io/#syllabus-homework
 
 We will give each homework a "raw" grade in Gradescope, which will then convert to a final score using the following conversion:
 

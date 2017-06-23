@@ -77,4 +77,4 @@ listening on enp0s3, link-type EN10MB (Ethernet), capture size 262144 bytes
 - You can save this output or the above output with the redirection >.
 - You can obviously combine the above two and specify a specific host to watch the 3-way handshake on for more specified traffic monitoring.
 - SUDO NOTE: if you don't want to follow the above steps to become root user, you CAN use `sudo -s` or `sudo su` to drop into a root prompt. 
-  See https://unixlab1980.github.io/commands/basics/sudo.html for more info on sudo, its uses and its dangers.
+  See https://cse80.github.io/commands/basics/sudo.html for more info on sudo, its uses and its dangers.

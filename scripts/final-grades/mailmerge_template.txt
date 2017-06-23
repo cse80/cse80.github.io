@@ -18,7 +18,7 @@ If you have any questions about how final grades were calculated, please refer t
 
 CSE Facebook group: https://www.facebook.com/groups/343020979078852/
 Course feedback: https://goo.gl/forms/FtVL3zLCeoO5rExv1
-Course website: https://unixlab1980.github.io/#grading
-Grading script: https://github.com/unixlab1980/unixlab1980.github.io/blob/master/scripts/final-grades/process.py
+Course website: https://cse80.github.io/#grading
+Grading script: https://github.com/cse80/cse80.github.io/blob/master/scripts/final-grades/process.py
 
 - c4cs staff

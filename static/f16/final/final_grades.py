@@ -277,8 +277,8 @@ think we could improve the class, please let us know in the
 <hr />
 <h3>Detailed Grade Breakdown</h3>
 <p>If you have any questions about how final grades were calculated,
-<a href="https://unixlab1980.github.io/#grading">here</a> is the course rubric, and
-<a href="https://github.com/unixlab1980/unixlab1980.github.io/blob/master/static/f16/final/final_grades.py">this script</a>
+<a href="https://cse80.github.io/#grading">here</a> is the course rubric, and
+<a href="https://github.com/cse80/cse80.github.io/blob/master/static/f16/final/final_grades.py">this script</a>
 computed final grades.</p>
 <table border="1">
   <tr>

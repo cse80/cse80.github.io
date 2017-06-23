@@ -491,7 +491,7 @@ def grade():
 <p>If you believe there to be an issue with the grading of your assignment
 reply to this email before Monday, March&nbsp;13.</p>
 <p>If you would like more information on how your assignment was graded, you can
-look over the <a href="https://github.com/unixlab1980/unixlab1980.github.io/blob/master/static/w17/hw/autograders/git-II/grade.py">autograder script</a></p>.
+look over the <a href="https://github.com/cse80/cse80.github.io/blob/master/static/w17/hw/autograders/git-II/grade.py">autograder script</a></p>.
 '''
 
         email += '''

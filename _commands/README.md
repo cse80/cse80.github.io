@@ -2,7 +2,7 @@ Command Webpages
 ================
 
 If you'd like to work on a the documentation for a command, first check if
-there's an [open issue](https://github.com/unixlab1980/unixlab1980.github.io/issues) so that
+there's an [open issue](https://github.com/cse80/cse80.github.io/issues) so that
 you don't conflict with someone else's efforts.
 
 If there's not an issue for what you want to work on, first open a new issue so

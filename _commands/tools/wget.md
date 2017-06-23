@@ -7,7 +7,7 @@ wget
 `wget` is a tool for downloading files using HTTP, HTTPS, or FTP using the command line.
 
 ~~~ bash
-$ wget https://unixlab1980.github.io/hw/c4cs-wk9-advanced.pdf
+$ wget https://cse80.github.io/hw/c4cs-wk9-advanced.pdf
 ~~~
 
 <!--more-->
@@ -19,10 +19,10 @@ $ wget https://unixlab1980.github.io/hw/c4cs-wk9-advanced.pdf
 The `-O` flag gives the downloaded file the filename specified after the flag.
 
 ~~~ bash
-$ wget https://unixlab1980.github.io/hw/c4cs-wk9-advanced.pdf -O adv_hw9.pdf
---2016-03-16 23:49:01--  https://unixlab1980.github.io/hw/c4cs-wk9-advanced.pdf
-Resolving unixlab1980.github.io (unixlab1980.github.io)... 23.235.40.133
-Connecting to unixlab1980.github.io (unixlab1980.github.io)|23.235.40.133|:443... connected.
+$ wget https://cse80.github.io/hw/c4cs-wk9-advanced.pdf -O adv_hw9.pdf
+--2016-03-16 23:49:01--  https://cse80.github.io/hw/c4cs-wk9-advanced.pdf
+Resolving cse80.github.io (cse80.github.io)... 23.235.40.133
+Connecting to cse80.github.io (cse80.github.io)|23.235.40.133|:443... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: 147386 (144K) [application/pdf]
 Saving to: ‘adv_hw9.pdf’
@@ -41,7 +41,7 @@ adv_hw9.pdf
 #### `wget` a webpage with all content necessary to view it offline
 
 ~~~ bash
-$ wget --page-requisites --span-hosts --convert-links https://unixlab1980.github.io/index.html
+$ wget --page-requisites --span-hosts --convert-links https://cse80.github.io/index.html
 ~~~
 
 #### Break it down

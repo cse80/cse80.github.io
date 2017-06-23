@@ -93,7 +93,7 @@ write a basic "Hello World" program
 
 # Course Resources
 
-## https://unixlab1980.github.io
+## https://cse80.github.io
 
 - The course homepage. Everything is here or linked from here.
 
@@ -203,9 +203,9 @@ The CSE department has some loaner laptops available for the semester<sup>&dagge
 
 ![Screenshot of Course Staff](img/course_staff.png)
 
-### ^another screenshot of [unixlab1980.github.io](https://unixlab1980.github.io/#staff)
+### ^another screenshot of [cse80.github.io](https://cse80.github.io/#staff)
 
-[c4cs]: https://unixlab1980.github.io
+[c4cs]: https://cse80.github.io
 
 
 ---
