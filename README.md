@@ -1,4 +1,4 @@
-# Computing for Computer Scientists
+# CSE 80: Linux and the Command Line
 
 This repository holds the sources for the course homepage for CSE80 ("Unix
 Lab"), a course for early-career CS students at the UC San Diego.
