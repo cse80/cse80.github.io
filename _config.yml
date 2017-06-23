@@ -10,8 +10,6 @@ description: > # this means to ignore newlines until "url:"
   remaining useful topics to cover.
 url: "https://unixlab1980.github.io" # the base hostname & protocol for your site
 
-google_analytics_id: UA-70360310-1
-
 timezone: America/Detroit
 
 permalink: none
