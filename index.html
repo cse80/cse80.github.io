@@ -170,19 +170,31 @@ not be taken, but it will be very difficult to complete in-class quizzes if you
 are not present.
 </p>
 
+{% assign anchor_text="Regrading" %}
+{% assign anchor_name="regrading" %}
+{% assign anchor_html_entity="h2" %}
+{% include anchor.html %}
+<p>
+Regrade requests for automated assignments will only result in a grade
+change if a bug is found and fixed in the automated assignment.
+</p>
+<p>
+Regrade requests for free text questions on assignments will result in
+the entire assignment being regraded, and the entire new grade will be
+kept permanently.
+</p>
+
+
 {% assign anchor_text="In-class Quizzes (50%)" %}
 {% assign anchor_name="syllabus-attendance" %}
 {% assign anchor_html_entity="h3" %}
 {% include anchor.html %}
 
 <p>
-<strong>Bring your laptop to every lecture.</strong>
-Lectures will include short quizzes used to verify comprehension and to give hands-on
-experience.
-Generally, correct answers will be worth full credit and incorrect answers half
-credit (you were there, but didn&rsquo;t get it right).
-We reserve the right to experiment with this mechanism a bit throughout the
-semester and vary when and how we ask questions.
+Lectures will include short quizzes and exercises used to verify
+comprehension and to give hands-on experience. We reserve the right to
+experiment with this mechanism a bit throughout the semester and vary
+when and how we ask questions.
 </p>
 
 <p>
@@ -196,7 +208,7 @@ contact us (preferably in advance) and we can work something out.
 {% include anchor.html %}
 
 <p>Late assignments will not be accepted.
-Please contact us if there are extenuating circumsances.</p>
+Please contact us before the assignment deadline if there are extenuating circumstances.</p>
 
 <p>This is a 2&nbsp;credit course and the quizzes and homeworks are designed to be
 commensurate with that. Each should take no more than 5 minutes, and homeworks
@@ -212,3 +224,31 @@ average. The goal of the homeworks is to reinforce concepts introduced in class.
 of week 6. The final will be comprehensive, but will focus on the second half
 of the course. The tests will be in the same style as the quizzes and homeworks,
 and are meant to ensure that you can retain the skills learned in this course.</p>
+
+{% assign anchor_text="Academic Integrity" %}
+{% assign anchor_name="syllabus-integrity" %}
+{% assign anchor_html_entity="h3" %}
+{% include anchor.html %}
+
+<p>Academic integrity at UCSD is governed by the Policy on Integrity
+of Scholarship. Allegations of academic misconduct are handled by the
+Academic Integrity Office. Cheating will not be tolerated, and any
+student who engages in forbidden conduct will be subjected to the
+disciplinary process. The course penalty assessed for any cheating in
+CSE 127 is a failing course grade. Cheaters may additionally be
+subject to administrative sanctions.
+</p>
+<p>
+During in-class assignments the only acceptable references are the
+instructors, TA, and manual pages. Googling is not permitted.
+</p>
+<p>
+For out of class assignments we strongly encourage students to stick
+to the same restrictions. However, using Google to search for
+additional information is permitted. Copy-pasting, or verbatim
+retyping, from an online source is considered cheating. If you
+reference an online source be 100% sure you understand the material
+you are using from it. If we have concerns about a submitted
+assignment's origins we may ask you to explain each step of the
+assignment in person to an instructor or TA.
+</p>
