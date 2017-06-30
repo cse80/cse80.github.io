@@ -76,27 +76,29 @@
 </tr>
 <tr>
   <td colspan="2" class="syllabus-homework">
-    {% if page.homeworkTBD %}
-      <p>Homework TBD</p>
-    {% elsif page.homeworkRelease %}
+    {% if page.homeworkRelease %}
       {% assign now = 'now' | date: '%s' | times: 1 %}
       {% assign homeworkRelease = page.homeworkRelease | date: '%s' | times: 1 %}
       {% if now > homeworkRelease %}
-        <p><a href="/static/{{ page.categories }}/hw/c4cs-wk{{ page.week }}-homework.pdf">Homework&nbsp;{{ page.week }} [pdf]</a></p>
-        <p><a href="/static/{{ page.categories }}/hw/c4cs-wk{{ page.week }}-homework.tex">Homework&nbsp;{{ page.week }} [tex]</a>
+        <p><a href="/static/{{ page.categories }}/hw/c4cs-wk{{ page.week }}-homework.pdf">Homework&nbsp;{{ page.week }}</a></p>
+        <!--<p><a href="/static/{{ page.categories }}/hw/c4cs-wk{{ page.week }}-homework.tex">Homework&nbsp;{{ page.week }} [tex]</a>-->
+      {% else %}
+        <p>Homework&nbsp;{{ page.week }}</p>
+        <p>Out: {{ page.homeworkRelease | date: '%a %b %-d, %l:%M%P' }}</p>
+        <p>Due: {{ page.solutionRelease | date: '%a %b %-d, %l:%M%P' }}</p>
       {% endif %}
       {% if page.advancedRelease %}
         {% assign advancedRelease = page.advancedRelease | date: '%s' | times: 1 %}
         {% if now > advancedRelease %}
-          <p><a href="/static/{{ page.categories }}/advanced/c4cs-wk{{ page.week }}-advanced.pdf">Advanced&nbsp;Exercise&nbsp;{{ page.week }} [pdf]</a></p>
-          <p><a href="/static/{{ page.categories }}/advanced/c4cs-wk{{ page.week }}-advanced.tex">Advanced&nbsp;Exercise&nbsp;{{ page.week }} [tex]</a></p>
+          <p><a href="/static/{{ page.categories }}/advanced/c4cs-wk{{ page.week }}-advanced.pdf">Advanced&nbsp;Exercise&nbsp;{{ page.week }}</a></p>
+          <!--<p><a href="/static/{{ page.categories }}/advanced/c4cs-wk{{ page.week }}-advanced.tex">Advanced&nbsp;Exercise&nbsp;{{ page.week }} [tex]</a></p>-->
         {% endif %}
       {% endif %}
       {% if page.solutionRelease %}
         {% assign solutionRelease = page.solutionRelease | date: '%s' | times: 1 %}
         {% if now > solutionRelease %}
           <hr />
-          <p><a href="/static/{{ page.categories }}/solutions/c4cs-wk{{ page.week }}-solutions.pdf">Solutions&nbsp;{{ page.week }} [pdf]</a></p>
+          <p><a href="/static/{{ page.categories }}/solutions/c4cs-wk{{ page.week }}-solutions.pdf">Solutions&nbsp;{{ page.week }}</a></p>
         {% endif %}
       {% endif %}
     {% else %}

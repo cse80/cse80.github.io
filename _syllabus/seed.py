@@ -5,9 +5,8 @@ import arrow
 template = """---
 week: {week}
 dates: {lecDate}
-homeworkRelease: {hwDate}
-solutionRelease: {solDate}
-homeworkTBD: true
+homeworkRelease: {hwDate} PDT
+solutionRelease: {solDate} PDT
 title: "{title}"
 # lectureTopics:
 #   - TBD
@@ -39,7 +38,7 @@ for idx, lecture in enumerate(lectures):
     with open('su17/week{0:02d}.md'.format(idx + 1), 'w') as f:
         lecDate = curLecDate
         hwDate  = lecDate.replace(hours=12)
-        solDate = hwDate.shift(days=2, hours=10)
+        solDate = hwDate.shift(days=2, hours=-2)
 
         dayofweek = curLecDate.weekday()
         if dayofweek == 0: # Monday

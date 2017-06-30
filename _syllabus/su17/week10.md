@@ -1,9 +1,8 @@
 ---
 week: 10
 dates: 08/02/2017
-homeworkRelease: 2017-08-02 12:00:00
-solutionRelease: 2017-08-04 22:00:00
-homeworkTBD: true
+homeworkRelease: 2017-08-02 12:00:00 PDT
+solutionRelease: 2017-08-04 10:00:00 PDT
 title: "System Administration"
 # lectureTopics:
 #   - TBD

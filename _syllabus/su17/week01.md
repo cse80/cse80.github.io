@@ -1,14 +1,13 @@
 ---
 week: 1
 dates: 07/03/2017
-homeworkRelease: 2017-07-03 12:00:00
-solutionRelease: 2017-07-05 22:00:00
-homeworkTBD: true
+homeworkRelease: 2017-07-03 12:00:00 PDT
+solutionRelease: 2017-07-05 10:00:00 PDT
 title: "Introduction and Setup"
 lectureTopics:
   - Intro and syllabus
-  - What is the command line?
   - History of terminals
+  - What is the command line?
   - Basic shell
 #commands:
 #  - pwd

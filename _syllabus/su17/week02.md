@@ -1,12 +1,14 @@
 ---
 week: 2
 dates: 07/05/2017
-homeworkRelease: 2017-07-05 12:00:00
-solutionRelease: 2017-07-07 22:00:00
-homeworkTBD: true
+homeworkRelease: 2017-07-05 12:00:00 PDT
+solutionRelease: 2017-07-07 10:00:00 PDT
 title: "Shells and Editors"
-# lectureTopics:
-#   - TBD
+lectureTopics:
+  - The journey to Vim
+  - Basic Vim usage
+  - Programming the shell
+  - Config files
 # homeworkTopics:
 #   - TBD
 # advancedTopics:

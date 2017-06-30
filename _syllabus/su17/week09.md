@@ -1,9 +1,8 @@
 ---
 week: 9
 dates: 07/31/2017
-homeworkRelease: 2017-07-31 12:00:00
-solutionRelease: 2017-08-02 22:00:00
-homeworkTBD: true
+homeworkRelease: 2017-07-31 12:00:00 PDT
+solutionRelease: 2017-08-02 10:00:00 PDT
 title: "How to Fix Problems"
 # lectureTopics:
 #   - TBD
