@@ -22,7 +22,4 @@ lectureTopics:
 #   - TBD
 # advancedTopics:
 #   - TBD
-lectureSummary:
----
- - Assignments 001, 002, and 003 are due by Wednesday.
- - Assignment 003 only requires that you ssh into the course server from home.
+lectureSummary: "Assignments 001, 002, and 003 are due by Wednesday. Assignment 003 only requires that you ssh into the course server from home."
