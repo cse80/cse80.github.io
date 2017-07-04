@@ -10,11 +10,6 @@ lectureTopics:
   - What is the command line?
   - Basic shell usage
 lectureSummary: |
-  You should watch [this video](https://www.youtube.com/watch?v=qv5b1Xowxdk) of
-  an Altair 8800 with a teletype terminal, as well as
-  [this one](https://www.youtube.com/watch?v=wALFrUd6Ttw) with a high speed tape
-  reader and video terminal.
-
   Start thinking about file structures. What file structure or directory
   organization would be helpful for you in this class? For other classes?
   For personal work? Media? Other files?
