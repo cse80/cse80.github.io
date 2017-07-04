@@ -111,7 +111,7 @@ defaults:
     values:
       category: os_x
 
-command_categories: ["basics"]
+command_categories: ["basics", "scripting"]
 #command_categories: ["basics", "tutorials", "shells", "scripting", "tools", "editors", "toys", "ubuntu", "os_x"]
 
 # Build settings

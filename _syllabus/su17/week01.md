@@ -21,9 +21,11 @@ commands:
   - cp
   - man
   - echo
-  - '&gt;'
-  - '&gt;&gt;'
+  - name: '&gt;'
+    link: redirect
+  - name: '&gt;&gt;'
+    link: redirect_append
 homeworkTopics:
-  - Assignments 001, 002, and 003 are due by Wednesday.
-  - Assignment 003 only requires that you ssh into the course server from home.
+  - Finish assignments 001, 002, and 003
+  - Assignment 003 only requires that you ssh into the course server from home
 ---
