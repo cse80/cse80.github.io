@@ -8,15 +8,16 @@ lectureTopics:
   - Intro and syllabus
   - History of terminals
   - What is the command line?
-  - Basic shell
+  - Basic shell usage
 lectureSummary: |
-  We covered the course format, accessing the server, and basic moving around
-  the terminal.
-
   You should watch [this video](https://www.youtube.com/watch?v=qv5b1Xowxdk) of
   an Altair 8800 with a teletype terminal, as well as
   [this one](https://www.youtube.com/watch?v=wALFrUd6Ttw) with a high speed tape
   reader and video terminal.
+
+  Start thinking about file structures. What file structure or directory
+  organization would be helpful for you in this class? For other classes?
+  For personal work? Media? Other files?
 commands:
   - pwd
   - ls
