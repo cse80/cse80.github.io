@@ -9,17 +9,23 @@ lectureTopics:
   - History of terminals
   - What is the command line?
   - Basic shell
-#commands:
-#  - pwd
-#  - ls
-#  - cd
-#  - mkdir
-#  - mv
-#  - rmdir
-#  - rm
-#  - man
-# homeworkTopics:
-#   - TBD
+lectureSummary: "Our course format, accessing the server, and basic moving around"
+commands:
+  - pwd
+  - ls
+  - cd
+  - mkdir
+  - rmdir
+  - rm
+  - mv
+  - cp
+  - man
+  - echo
+  - >
+  - >>
+homeworkTopics:
+  - Assignments 001, 002, and 003 are due by Wednesday.
+  - Assignment 003 only requires that you ssh into the course server from home."
 # advancedTopics:
 #   - TBD
-lectureSummary: "Assignments 001, 002, and 003 are due by Wednesday. Assignment 003 only requires that you ssh into the course server from home."
+---
