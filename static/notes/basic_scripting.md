@@ -2,8 +2,10 @@
 # Scripting in Bash
 
 Scripts in bash are just text files. They are interpreted (not compiled), so
-they're easy to run and test. Because everything that is possible in a script is
-also possible at the command line, I encourage you to try stuff out and test it.
+they're easy to run and test because you can make a quick change and test it out
+easily. Because everything that is possible in a script is also possible at the
+command line, I encourage you to try stuff out on the command line first, then
+throw it into a script when you're confident.
 
 ## Creating a shell script
 
@@ -13,9 +15,9 @@ required, but is nice (vim will give you syntax highlighting!).
 In order to call a script, you'll either have to give the script to bash to run
 directly, e.g.:
 
-```
+~~~
 $ bash SCRIPT_NAME.sh
-```
+~~~
 
 OR, you'll need to mark it as executable. You can mark a script as executable
 with the command:

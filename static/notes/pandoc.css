@@ -128,6 +128,16 @@ pre, code, kbd, samp {
   font-size: 0.98em;
 }
 
+pre code {
+  padding: 1em;
+  margin: 1em;
+  border: 1px solid #ddd;
+  border-radius: .4em;
+  background: #f6f6f6;
+  width: 90%;
+  display: block;
+}
+
 pre {
   white-space: pre;
   white-space: pre-wrap;
