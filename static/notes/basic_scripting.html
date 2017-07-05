@@ -1,0 +1,53 @@
+<h1 id="scripting-in-bash">Scripting in Bash</h1>
+<p>Scripts in bash are just text files. They are interpreted (not compiled), so they're easy to run and test. Because everything that is possible in a script is also possible at the command line, I encourage you to try stuff out and test it.</p>
+<h2 id="creating-a-shell-script">Creating a shell script</h2>
+<p>By convention, shell scripts are named with the '.sh' file extension. This isn't required, but is nice (vim will give you syntax highlighting!).</p>
+<p>In order to call a script, you'll either have to give the script to bash to run directly, e.g.:</p>
+<pre><code>$ bash SCRIPT_NAME.sh</code></pre>
+<p>OR, you'll need to mark it as executable. You can mark a script as executable with the command:</p>
+<pre><code>$ chmod +x SCRIPT_NAME.sh</code></pre>
+<p>(and can remove the executable flag with <code>-x</code>). We'll be revisiting <code>chmod</code> in a future lecture.</p>
+<p>Recall that once you've marked it as executable, you have to show bash that you're providing a <em>path</em> to an executable, rather than an executable it should go find in the typical places it looks. You can do that by either giving it an absolute path (e.g. one that starts with <code>/</code>), or a relative path that starts with <code>./</code>.</p>
+<h2 id="variables">Variables</h2>
+<p>Variables in bash are prefixed with a <code>$</code>, and are written to and accessed like so:</p>
+<pre><code>my_variable=&quot;My variable content!&quot;
+echo $my_variable</code></pre>
+<p>You can also <code>unset</code> a variable (e.g. <code>unset my_variable</code>) to make it go away.</p>
+<p>There are also a number of built-in variables, which we'll explore in a minute.</p>
+<h2 id="arguments">Arguments</h2>
+<p>When writing shell scripts, it's often useful to pass in an argument to your script so that it can change behavior accordingly.</p>
+<p>By default, arguments passed into the shell are numbers <code>$1</code>, <code>$2</code>, and so on. You can see a complete list of ALL of the arguments with <code>$@</code>.</p>
+<p>If you only want a subset of your arguments, for instance if you wanted to save away &quot;all BUT the first argument&quot; in its own variable, you can <code>shift</code> them. e.g.:</p>
+<pre><code>$ echo $@
+a b c d
+$ shift
+$ echo $@
+b c d
+$ shift 2
+$ echo $@
+d</code></pre>
+<p>The argument to <code>shift</code> is optional, defaults to 1, and indicates how many arguments it should pop off the front.</p>
+<p>In the future, if you're curious how many arguments you have, that's stored in the intuitively-named <code>$#</code>.</p>
+<h2 id="exit-statii">Exit Statii</h2>
+<p>Every command, function and builtin (that is, everything you can 'run') in the shell will return a 'return code' (aka exit code or exit status). This is a single integer that should indicate success or failure.</p>
+<p>Zero (0) is the code for 'everything went fine'. Anything other than 0 is a failure case. By default, your shell script will exit with the 0 code, unless you tell it to do otherwise.</p>
+<p>In bash, you can grab the exit status of the most-recently-executed command with the insightful <code>$?</code>.</p>
+<p>Yes, these variable names are terrible. I remember them as: - <code>@</code> as in <em>all</em> my arguments - the hash <code>#</code> as a number, the number of arguments, and - <code>?</code> as in &quot;was that command successful?&quot;</p>
+<h2 id="dying-on-errors">Dying on errors</h2>
+<p>Until you have conditionals to work with (and often afterwards!) it's useful if your script stops executing when any of the commands in your script fails. If you add the following to the top of your script, it'll know to die whenever a command executes with non-zero exit status:</p>
+<pre><code>set -e</code></pre>
+<h2 id="other-predefined-variables">Other predefined variables</h2>
+<p>There exist a number of variables that you can use if you want that are pre-defined for you. They largely recreate values that you also have commands for: - <code>$USER</code>, which is equivalent to the command <code>whoami</code>, and shows your username - <code>$PWD</code>, which is equivalent to the command <code>pwd</code>, and shows the absolute path to your current directory - <code>$HOME</code> provides the absolute path to your home directory - <code>$PATH</code> contains the list of directories, <code>:</code>-delimited, of where your shell should look for programs to run.</p>
+<h2 id="the-path">The <code>$PATH</code></h2>
+<p>When you ask the shell to execute a program, the shell will go try and find an executable file with that name in any of the directories it knows to look in (that list is the contents of the <code>$PATH</code> variable). If you're curious where a program is located, you can find it by running <code>which COMMAND</code>, e.g. <code>which vim</code> should yield <code>/usr/bin/vim</code> on our systems.</p>
+<h2 id="subshells">Subshells</h2>
+<p>It's often useful to grab the output of a command, and either store it into a variable, or use it as an argument to a subsequent command. You can do that with a subshell. The syntax looks like this:</p>
+<pre><code>this_dir_contents=$(ls)</code></pre>
+<p>This will become especially useful when we have loops, but it's also useful if, for instance, you want to use the output from a command to create a filename.</p>
+<h2 id="other-useful-scripting-tidbits.">Other useful scripting tidbits.</h2>
+<ul>
+<li>Any line that starts with a <code>#</code> is considered a comment, and is ignored by the shell. Document your code!</li>
+<li><code>dirname</code> will, given a path, give you just the part of the path that corresponds to the directory, e.g. <code>dirname /foo/bar.txt</code> gives you <code>/foo</code>.</li>
+<li><code>basename</code> is the complement of <code>dirname</code>: given a path, it'll give you just the file part of the path, e.g. <code>dirname /foo/bar.txt</code> gives you <code>bar.txt</code>.</li>
+<li><code>readlink -f</code> will, given a relative path, give you the absolute path.</li>
+</ul>
