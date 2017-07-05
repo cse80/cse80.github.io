@@ -83,9 +83,10 @@ In bash, you can grab the exit status of the most-recently-executed command with
 the insightful `$?`.
 
 Yes, these variable names are terrible. I remember them as:
-- `@` as in _all_ my arguments
-- the hash `#` as a number, the number of arguments, and
-- `?` as in "was that command successful?"
+
+ * `@` as in _all_ my arguments
+ * the hash `#` as a number, the number of arguments, and
+ * `?` as in "was that command successful?"
 
 ## Dying on errors
 
@@ -102,11 +103,12 @@ set -e
 There exist a number of variables that you can use if you want that are
 pre-defined for you. They largely recreate values that you also have commands
 for:
-- `$USER`, which is equivalent to the command `whoami`, and shows your username
-- `$PWD`, which is equivalent to the command `pwd`, and shows the absolute path
+
+ * `$USER`, which is equivalent to the command `whoami`, and shows your username
+ * `$PWD`, which is equivalent to the command `pwd`, and shows the absolute path
     to your current directory
-- `$HOME` provides the absolute path to your home directory
-- `$PATH` contains the list of directories, `:`-delimited, of where your shell
+ * `$HOME` provides the absolute path to your home directory
+ * `$PATH` contains the list of directories, `:`-delimited, of where your shell
     should look for programs to run.
 
 ## The `$PATH`
@@ -132,12 +134,12 @@ for instance, you want to use the output from a command to create a filename.
 
 ## Other useful scripting tidbits.
 
-- Any line that starts with a `#` is considered a comment, and is ignored by the
+ * Any line that starts with a `#` is considered a comment, and is ignored by the
 shell. Document your code!
-- `dirname` will, given a path, give you just the part of the path that
+ * `dirname` will, given a path, give you just the part of the path that
     corresponds to the directory, e.g. `dirname /foo/bar.txt` gives you `/foo`.
-- `basename` is the complement of `dirname`: given a path, it'll give you just
+ * `basename` is the complement of `dirname`: given a path, it'll give you just
     the file part of the path, e.g. `dirname /foo/bar.txt` gives you `bar.txt`.
-- `readlink -f` will, given a relative path, give you the absolute path.
+ * `readlink -f` will, given a relative path, give you the absolute path.
 
 

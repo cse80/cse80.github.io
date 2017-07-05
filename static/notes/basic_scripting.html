@@ -32,12 +32,23 @@ d</code></pre>
 <p>Every command, function and builtin (that is, everything you can 'run') in the shell will return a 'return code' (aka exit code or exit status). This is a single integer that should indicate success or failure.</p>
 <p>Zero (0) is the code for 'everything went fine'. Anything other than 0 is a failure case. By default, your shell script will exit with the 0 code, unless you tell it to do otherwise.</p>
 <p>In bash, you can grab the exit status of the most-recently-executed command with the insightful <code>$?</code>.</p>
-<p>Yes, these variable names are terrible. I remember them as: - <code>@</code> as in <em>all</em> my arguments - the hash <code>#</code> as a number, the number of arguments, and - <code>?</code> as in &quot;was that command successful?&quot;</p>
+<p>Yes, these variable names are terrible. I remember them as:</p>
+<ul>
+<li><code>@</code> as in <em>all</em> my arguments</li>
+<li>the hash <code>#</code> as a number, the number of arguments, and</li>
+<li><code>?</code> as in &quot;was that command successful?&quot;</li>
+</ul>
 <h2 id="dying-on-errors">Dying on errors</h2>
 <p>Until you have conditionals to work with (and often afterwards!) it's useful if your script stops executing when any of the commands in your script fails. If you add the following to the top of your script, it'll know to die whenever a command executes with non-zero exit status:</p>
 <pre><code>set -e</code></pre>
 <h2 id="other-predefined-variables">Other predefined variables</h2>
-<p>There exist a number of variables that you can use if you want that are pre-defined for you. They largely recreate values that you also have commands for: - <code>$USER</code>, which is equivalent to the command <code>whoami</code>, and shows your username - <code>$PWD</code>, which is equivalent to the command <code>pwd</code>, and shows the absolute path to your current directory - <code>$HOME</code> provides the absolute path to your home directory - <code>$PATH</code> contains the list of directories, <code>:</code>-delimited, of where your shell should look for programs to run.</p>
+<p>There exist a number of variables that you can use if you want that are pre-defined for you. They largely recreate values that you also have commands for:</p>
+<ul>
+<li><code>$USER</code>, which is equivalent to the command <code>whoami</code>, and shows your username</li>
+<li><code>$PWD</code>, which is equivalent to the command <code>pwd</code>, and shows the absolute path to your current directory</li>
+<li><code>$HOME</code> provides the absolute path to your home directory</li>
+<li><code>$PATH</code> contains the list of directories, <code>:</code>-delimited, of where your shell should look for programs to run.</li>
+</ul>
 <h2 id="the-path">The <code>$PATH</code></h2>
 <p>When you ask the shell to execute a program, the shell will go try and find an executable file with that name in any of the directories it knows to look in (that list is the contents of the <code>$PATH</code> variable). If you're curious where a program is located, you can find it by running <code>which COMMAND</code>, e.g. <code>which vim</code> should yield <code>/usr/bin/vim</code> on our systems.</p>
 <h2 id="subshells">Subshells</h2>
