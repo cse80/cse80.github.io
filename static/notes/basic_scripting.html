@@ -6,6 +6,46 @@
   <meta name="generator" content="pandoc" />
   <title></title>
   <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #ffffff; color: #1f1c1b; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; background-color: #ffffff; color: #a0a0a0; border-right: 1px solid #a0a0a0; }
+td.sourceCode { padding-left: 5px; }
+pre, code { color: #1f1c1b; background-color: #ffffff; }
+code > span.kw { color: #1f1c1b; font-weight: bold; } /* Keyword */
+code > span.dt { color: #0057ae; } /* DataType */
+code > span.dv { color: #b08000; } /* DecVal */
+code > span.bn { color: #b08000; } /* BaseN */
+code > span.fl { color: #b08000; } /* Float */
+code > span.cn { color: #aa5500; } /* Constant */
+code > span.ch { color: #924c9d; } /* Char */
+code > span.sc { color: #3daee9; } /* SpecialChar */
+code > span.st { color: #bf0303; } /* String */
+code > span.vs { color: #bf0303; } /* VerbatimString */
+code > span.ss { color: #ff5500; } /* SpecialString */
+code > span.im { color: #ff5500; } /* Import */
+code > span.co { color: #898887; } /* Comment */
+code > span.do { color: #607880; } /* Documentation */
+code > span.an { color: #ca60ca; } /* Annotation */
+code > span.cv { color: #0095ff; } /* CommentVar */
+code > span.ot { color: #006e28; } /* Other */
+code > span.fu { color: #644a9b; } /* Function */
+code > span.va { color: #0057ae; } /* Variable */
+code > span.cf { color: #1f1c1b; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #1f1c1b; } /* Operator */
+code > span.bu { color: #644a9b; font-weight: bold; } /* BuiltIn */
+code > span.ex { color: #0095ff; font-weight: bold; } /* Extension */
+code > span.pp { color: #006e28; } /* Preprocessor */
+code > span.at { color: #0057ae; } /* Attribute */
+code > span.re { color: #0057ae; } /* RegionMarker */
+code > span.in { color: #b08000; } /* Information */
+code > span.wa { color: #bf0303; } /* Warning */
+code > span.al { color: #bf0303; font-weight: bold; } /* Alert */
+code > span.er { color: #bf0303; text-decoration: underline; } /* Error */
+code > span. { color: #1f1c1b; } /* Normal */
+  </style>
   <link rel="stylesheet" href="pandoc.css" type="text/css" />
 </head>
 <body>
@@ -14,29 +54,29 @@
 <h2 id="creating-a-shell-script">Creating a shell script</h2>
 <p>By convention, shell scripts are named with the '.sh' file extension. This isn't required, but is nice (vim will give you syntax highlighting!).</p>
 <p>In order to call a script, you'll either have to give the script to bash to run directly, e.g.:</p>
-<pre><code>$ bash SCRIPT_NAME.sh</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">bash</span> SCRIPT_NAME.sh</code></pre></div>
 <p>OR, you'll need to mark it as executable. You can mark a script as executable with the command:</p>
-<pre><code>$ chmod +x SCRIPT_NAME.sh</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">chmod</span> +x SCRIPT_NAME.sh</code></pre></div>
 <p>(and can remove the executable flag with <code>-x</code>). We'll be revisiting <code>chmod</code> in a future lecture.</p>
 <p>Recall that once you've marked it as executable, you have to show bash that you're providing a <em>path</em> to an executable, rather than an executable it should go find in the typical places it looks. You can do that by either giving it an absolute path (e.g. one that starts with <code>/</code>), or a relative path that starts with <code>./</code>.</p>
 <h2 id="variables">Variables</h2>
 <p>Variables in bash are prefixed with a <code>$</code>, and are written to and accessed like so:</p>
-<pre><code>my_variable=&quot;My variable content!&quot;
-echo $my_variable</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">my_variable=</span><span class="st">&quot;My variable content!&quot;</span>
+<span class="bu">echo</span> <span class="va">$my_variable</span></code></pre></div>
 <p>You can also <code>unset</code> a variable (e.g. <code>unset my_variable</code>) to make it go away.</p>
 <p>There are also a number of built-in variables, which we'll explore in a minute.</p>
 <h2 id="arguments">Arguments</h2>
 <p>When writing shell scripts, it's often useful to pass in an argument to your script so that it can change behavior accordingly.</p>
 <p>By default, arguments passed into the shell are numbers <code>$1</code>, <code>$2</code>, and so on. You can see a complete list of ALL of the arguments with <code>$@</code>.</p>
 <p>If you only want a subset of your arguments, for instance if you wanted to save away &quot;all BUT the first argument&quot; in its own variable, you can <code>shift</code> them. e.g.:</p>
-<pre><code>$ echo $@
-a b c d
-$ shift
-$ echo $@
-b c d
-$ shift 2
-$ echo $@
-d</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="bu">echo</span> <span class="va">$@</span>
+<span class="ex">a</span> b c d
+$ <span class="bu">shift</span>
+$ <span class="bu">echo</span> <span class="va">$@</span>
+<span class="ex">b</span> c d
+$ <span class="bu">shift</span> 2
+$ <span class="bu">echo</span> <span class="va">$@</span>
+<span class="ex">d</span></code></pre></div>
 <p>The argument to <code>shift</code> is optional, defaults to 1, and indicates how many arguments it should pop off the front.</p>
 <p>In the future, if you're curious how many arguments you have, that's stored in the intuitively-named <code>$#</code>.</p>
 <h2 id="exit-statii">Exit Statii</h2>
@@ -51,7 +91,7 @@ d</code></pre>
 </ul>
 <h2 id="dying-on-errors">Dying on errors</h2>
 <p>Until you have conditionals to work with (and often afterwards!) it's useful if your script stops executing when any of the commands in your script fails. If you add the following to the top of your script, it'll know to die whenever a command executes with non-zero exit status:</p>
-<pre><code>set -e</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">set</span> <span class="ex">-e</span></code></pre></div>
 <h2 id="other-predefined-variables">Other predefined variables</h2>
 <p>There exist a number of variables that you can use if you want that are pre-defined for you. They largely recreate values that you also have commands for:</p>
 <ul>
@@ -64,7 +104,7 @@ d</code></pre>
 <p>When you ask the shell to execute a program, the shell will go try and find an executable file with that name in any of the directories it knows to look in (that list is the contents of the <code>$PATH</code> variable). If you're curious where a program is located, you can find it by running <code>which COMMAND</code>, e.g. <code>which vim</code> should yield <code>/usr/bin/vim</code> on our systems.</p>
 <h2 id="subshells">Subshells</h2>
 <p>It's often useful to grab the output of a command, and either store it into a variable, or use it as an argument to a subsequent command. You can do that with a subshell. The syntax looks like this:</p>
-<pre><code>this_dir_contents=$(ls)</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">this_dir_contents=$(</span><span class="fu">ls</span><span class="va">)</span></code></pre></div>
 <p>This will become especially useful when we have loops, but it's also useful if, for instance, you want to use the output from a command to create a filename.</p>
 <h2 id="other-useful-scripting-tidbits.">Other useful scripting tidbits.</h2>
 <ul>

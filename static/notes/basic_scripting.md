@@ -15,15 +15,17 @@ required, but is nice (vim will give you syntax highlighting!).
 In order to call a script, you'll either have to give the script to bash to run
 directly, e.g.:
 
-~~~
+~~~ {.bash}
 $ bash SCRIPT_NAME.sh
 ~~~
 
 OR, you'll need to mark it as executable. You can mark a script as executable
 with the command:
-```
+
+~~~ {.bash}
 $ chmod +x SCRIPT_NAME.sh
-```
+~~~
+
 (and can remove the executable flag with `-x`). We'll be revisiting `chmod` in a
 future lecture.
 
@@ -37,10 +39,12 @@ with `./`.
 
 Variables in bash are prefixed with a `$`, and are written to and accessed like
 so:
-```
+
+~~~ {.bash}
 my_variable="My variable content!"
 echo $my_variable
-```
+~~~
+
 You can also `unset` a variable (e.g. `unset my_variable`) to make it go away.
 
 There are also a number of built-in variables, which we'll explore in a minute.
@@ -56,7 +60,8 @@ You can see a complete list of ALL of the arguments with `$@`.
 If you only want a subset of your arguments, for instance if you wanted to save
 away "all BUT the first argument" in its own variable, you can `shift` them.
 e.g.:
-```
+
+~~~ {.bash}
 $ echo $@
 a b c d
 $ shift
@@ -65,7 +70,8 @@ b c d
 $ shift 2
 $ echo $@
 d
-```
+~~~
+
 The argument to `shift` is optional, defaults to 1, and indicates how many
 arguments it should pop off the front.
 
@@ -96,9 +102,10 @@ Until you have conditionals to work with (and often afterwards!) it's useful if
 your script stops executing when any of the commands in your script fails. If
 you add the following to the top of your script, it'll know to die whenever a
 command executes with non-zero exit status:
-```
+
+~~~ {.bash}
 set -e
-```
+~~~
 
 ## Other predefined variables
 
@@ -126,7 +133,7 @@ program is located, you can find it by running `which COMMAND`, e.g.
 It's often useful to grab the output of a command, and either store it into a
 variable, or use it as an argument to a subsequent command. You can do that with
 a subshell. The syntax looks like this:
-```
+``` {.bash}
 this_dir_contents=$(ls)
 ```
 
@@ -143,5 +150,4 @@ shell. Document your code!
  * `basename` is the complement of `dirname`: given a path, it'll give you just
     the file part of the path, e.g. `dirname /foo/bar.txt` gives you `bar.txt`.
  * `readlink -f` will, given a relative path, give you the absolute path.
-
 
