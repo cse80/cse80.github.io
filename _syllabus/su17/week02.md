@@ -8,9 +8,12 @@ lectureTopics:
   - The journey to Vim
   - Basic Vim usage
   - Programming the shell
+lectureSummary: |
+  Check out the assignment on vim for our vim coverage. For basic info on
+  programming the shell, see some notes Joe threw together
+  [here](/static/notes/basic_scripting.html)
 # homeworkTopics:
 #   - TBD
 # advancedTopics:
 #   - TBD
-lectureSummary:
 ---
