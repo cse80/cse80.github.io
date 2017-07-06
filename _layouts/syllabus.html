@@ -94,13 +94,6 @@
           <!--<p><a href="/static/{{ page.categories }}/advanced/c4cs-wk{{ page.week }}-advanced.tex">Advanced&nbsp;Exercise&nbsp;{{ page.week }} [tex]</a></p>-->
         {% endif %}
       {% endif %}
-      {% if page.solutionRelease %}
-        {% assign solutionRelease = page.solutionRelease | date: '%s' | times: 1 %}
-        {% if now > solutionRelease %}
-          <hr />
-          <p><a href="/static/{{ page.categories }}/solutions/c4cs-wk{{ page.week }}-solutions.pdf">Solutions&nbsp;{{ page.week }}</a></p>
-        {% endif %}
-      {% endif %}
     {% else %}
       <p>No homework!</p>
     {% endif %}
