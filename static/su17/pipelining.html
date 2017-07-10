@@ -1,0 +1,295 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Shell Powertools</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #ffffff; color: #1f1c1b; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; background-color: #ffffff; color: #a0a0a0; border-right: 1px solid #a0a0a0; }
+td.sourceCode { padding-left: 5px; }
+pre, code { color: #1f1c1b; background-color: #ffffff; }
+code > span.kw { color: #1f1c1b; font-weight: bold; } /* Keyword */
+code > span.dt { color: #0057ae; } /* DataType */
+code > span.dv { color: #b08000; } /* DecVal */
+code > span.bn { color: #b08000; } /* BaseN */
+code > span.fl { color: #b08000; } /* Float */
+code > span.cn { color: #aa5500; } /* Constant */
+code > span.ch { color: #924c9d; } /* Char */
+code > span.sc { color: #3daee9; } /* SpecialChar */
+code > span.st { color: #bf0303; } /* String */
+code > span.vs { color: #bf0303; } /* VerbatimString */
+code > span.ss { color: #ff5500; } /* SpecialString */
+code > span.im { color: #ff5500; } /* Import */
+code > span.co { color: #898887; } /* Comment */
+code > span.do { color: #607880; } /* Documentation */
+code > span.an { color: #ca60ca; } /* Annotation */
+code > span.cv { color: #0095ff; } /* CommentVar */
+code > span.ot { color: #006e28; } /* Other */
+code > span.fu { color: #644a9b; } /* Function */
+code > span.va { color: #0057ae; } /* Variable */
+code > span.cf { color: #1f1c1b; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #1f1c1b; } /* Operator */
+code > span.bu { color: #644a9b; font-weight: bold; } /* BuiltIn */
+code > span.ex { color: #0095ff; font-weight: bold; } /* Extension */
+code > span.pp { color: #006e28; } /* Preprocessor */
+code > span.at { color: #0057ae; } /* Attribute */
+code > span.re { color: #0057ae; } /* RegionMarker */
+code > span.in { color: #b08000; } /* Information */
+code > span.wa { color: #bf0303; } /* Warning */
+code > span.al { color: #bf0303; font-weight: bold; } /* Alert */
+code > span.er { color: #bf0303; text-decoration: underline; } /* Error */
+code > span. { color: #1f1c1b; } /* Normal */
+  </style>
+  <link rel="stylesheet" href="pandoc.css" type="text/css" />
+</head>
+<body>
+<div id="header">
+<h1 class="title">Shell Powertools</h1>
+</div>
+<div id="TOC">
+<ul>
+<li><a href="#a-warning">A Warning</a></li>
+<li><a href="#pipelines">Pipelines</a><ul>
+<li><a href="#text-as-a-universal-interface">Text as a universal interface</a></li>
+<li><a href="#stdout-stderr-stdin."><code>stdout</code>, <code>stderr</code>, <code>stdin</code>.</a></li>
+<li><a href="#interconnecting-programs">Interconnecting programs</a></li>
+<li><a href="#another-example">Another example</a></li>
+</ul></li>
+<li><a href="#loops-and-conditionals">Loops and Conditionals</a><ul>
+<li><a href="#the-for-loop">The For loop</a></li>
+<li><a href="#conditionals">Conditionals</a></li>
+<li><a href="#testing-your-own-conditions">Testing your own conditions</a></li>
+<li><a href="#conditional-execution-outside-of-s...">Conditional execution outside of <code>[[ ]]</code>s...</a></li>
+<li><a href="#while-loops">While loops</a></li>
+</ul></li>
+<li><a href="#piping-into-loops">Piping into Loops</a><ul>
+<li><a href="#a-real-life-example">A real-life example</a></li>
+</ul></li>
+<li><a href="#additional-topics-covered-in-class">Additional topics covered in class</a></li>
+</ul>
+</div>
+<p>Pipelines and looping are what actually make shell powerful, because they allow us to glue together small pieces to do bigger, more interesting things.</p>
+<p>Everything we've learned up until now (except maybe editors) is really mostly included to facilitate this material.</p>
+<h2 id="a-warning">A Warning</h2>
+<p><strong>Before we get any further:</strong> this file contains Bash-isms. Most of them are marked when they occur, but if you add them to a script, ensure that the script is being run by Bash. This means you <em>must</em> have the <code>#!/bin/bash</code> hashbang at the top of your file, or you must always be running your script with <code>bash YOUR_SCRIPT.sh</code>.</p>
+<h2 id="pipelines">Pipelines</h2>
+<h3 id="text-as-a-universal-interface">Text as a universal interface</h3>
+<p>In the words of Douglas McIlroy, the original creator of the pipelining interface in Unix/Linux: &gt; This is the Unix philosophy: Write programs that do one thing and do it well. &gt; Write programs to work together. Write programs to handle text streams, &gt; because that is a universal interface.</p>
+<p>So what does he mean by universal interface?</p>
+<p>He means that humans understand readable text, and as a result, we're good at coding around it. Programs that rely on text-based input and output, rather than relying on some crazy binary format (type <code>less $(which less)</code> to see an example) have the ability to interconnect naturally and natively. If you choose a binary format, every program has to be specifically written to support that format, and if you don't, it's hard to interconnect them!</p>
+<h3 id="stdout-stderr-stdin."><code>stdout</code>, <code>stderr</code>, <code>stdin</code>.</h3>
+<p>Throughout this class, we've seen a variety of programs that print text to the console in front of you. We've also seen, briefly, the <code>&gt;</code> and <code>&gt;&gt;</code> operators that take that output, and redirects it to a file instead.</p>
+<p>The shell is able to do that because the program is writing its output to a place that the shell expects. The shell has to make the decision to show output to you, write it to a file, or do something else entirely.</p>
+<p>What we're about to learn is, essentially, how and why we tell the shell to connect this, and other, output channels in ways that are advantageous to us. As a result, it's important to know what we're working with.</p>
+<h5 id="stdout"><code>stdout</code></h5>
+<p>This standard output channel is called <code>stdout</code>. Whether you realize it or not, the first thing you learn in any programming language is how to write to standard out. In general, 'printing' from a program means writing data to <code>stdout</code>. The <code>out</code> in <code>System.out.println</code> from Java is referencing <code>stdout</code>. When you use <code>printf</code> in C, it defaults to <code>stdout</code> (you can use <code>fprintf</code> to make it print to an arbitrary place).</p>
+<h5 id="stderr"><code>stderr</code></h5>
+<p><code>stderr</code> (aka <code>System.err</code> in Java) is very similar to <code>stdout</code> (e.g. your program can write to it), but it's designed for errors. The redirection operators do NOT (by default) redirect <code>stderr</code>. That way, you can see an error message even when your command redirects to a file, and programs can produce error messages without damaging their output.</p>
+<h5 id="stdin"><code>stdin</code></h5>
+<p>The other half of this equation is <code>stdin</code>, which is a standard way to provide data to a program. We haven't used very much of <code>stdin</code> yet, but most of the programs we've covered that take a filename as an argument are also happy to read their input from <code>stdin</code> instead.</p>
+<h3 id="interconnecting-programs">Interconnecting programs</h3>
+<p>In addition to the output redirection operators, the shell lets you leverage the fact that most programs accept input from <code>stdin</code> and write output to <code>stdout</code> to let you chain programs together.</p>
+<p>The <code>|</code> (pipe) operator allows you to do just that-- provide the output of one program as the input to the next. This allows you to build up pretty sophisticated capabilities pretty quickly.</p>
+<p>Before we get any further, here are some command building blocks that we can use to demonstrate this:</p>
+<ul>
+<li><code>wc</code> will count bytes, words, and lines contained in any files whose names you give it. The <code>-l</code> flag tells it to only count lines.</li>
+<li><code>sort</code> will sort the lines you provide to it. The <code>-n</code> flag tells it to do a numerical-based sort (instead of alphabetical).</li>
+<li><code>head</code> will provide you with only the first few lines of output. By default this number is 10, but you can customize it with, for instance, <code>-n 4</code> to only show the top two lines.</li>
+<li><code>tail</code> works just like head, except it only does the last few lines of output. It can similarly be customized with the <code>-n</code> flag.</li>
+</ul>
+<p>Combining these tools allows us to start answering interesting questions fairly quickly. Assume we're inside the <code>~/corpus/english_words/adjectives</code> directory, which contains:</p>
+<pre><code>$ ls
+1syllable_adjectives.txt
+2syllable_adjectives.txt
+3syllable_adjectives.txt
+4syllable_adjectives.txt
+all_adjectives.txt</code></pre>
+<p>If we're curious how many of each type of adjectives there are, we could do: <code>wc -l *</code>, which will yield:</p>
+<pre><code>$ wc -l *
+  689 1syllable_adjectives.txt
+ 5187 2syllable_adjectives.txt
+ 6924 3syllable_adjectives.txt
+ 5301 4syllable_adjectives.txt
+28479 all_adjectives.txt
+46580 total</code></pre>
+<p>Already, we can see that there are more 3-syllable adjectives than any other. Imagine for a moment, though, that we had a directory with hundreds of files. It wouldn't necessarily be obvious which file had the most without having to look through every line. We can combine <code>wc</code> with <code>sort</code>, though, to make it easier:</p>
+<pre><code>$ wc -l * | sort -n
+   689 1syllable_adjectives.txt
+  5187 2syllable_adjectives.txt
+  5301 4syllable_adjectives.txt
+  6924 3syllable_adjectives.txt
+ 28479 all_adjectives.txt
+ 46580 total</code></pre>
+<p>This is great, but if we were only interested in knowing the file with the largest number of lines, we could add <code>tail</code> to the mix:</p>
+<pre><code>$ wc -l * | sort -n | tail -n 2
+ 28479 all_adjectives.txt
+ 46580 total</code></pre>
+<p>If we only want the single output line, we can throw <code>head</code> into the mix.</p>
+<pre><code>$ wc -l * | sort -n | tail -n 2 | head -n 1
+ 28479 all_adjectives.txt</code></pre>
+<p>In this way, we can combine arbitrary programs' outputs with arbitrary program's inputs, so long as everyone is reading from <code>stdin</code> and writing to <code>stdout</code>.</p>
+<h3 id="another-example">Another example</h3>
+<p>Just for fun, can you figure out what this code is doing?</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="va">winner=$(</span><span class="fu">who</span> \
+    <span class="kw">|</span> <span class="fu">cut</span> -f 1 -d<span class="st">&#39; &#39;</span> \
+    <span class="kw">|</span> <span class="fu">sort</span> \
+    <span class="kw">|</span> <span class="fu">uniq</span> -c \
+    <span class="kw">|</span> <span class="fu">sort</span> -n \
+    <span class="kw">|</span> <span class="fu">tail</span> -n 1 \
+    <span class="kw">|</span> <span class="fu">sed</span> <span class="st">&#39;s/^ *//&#39;</span> \
+    <span class="kw">|</span> <span class="fu">cut</span> -f2 -d<span class="st">&#39; &#39;</span><span class="va">)</span>
+
+<span class="bu">echo</span> <span class="st">&quot;The winner is </span><span class="va">$winner</span><span class="st">!&quot;</span></code></pre></div>
+<h2 id="loops-and-conditionals">Loops and Conditionals</h2>
+<p>Loops and conditionals, combined with pipelining, dramatically increase what the shell can do.</p>
+<h3 id="the-for-loop">The For loop</h3>
+<p>The <code>for</code> loop that looks like this:</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">for</span> <span class="ex">i</span> in 1 2 3
+<span class="kw">do</span>
+    <span class="bu">echo</span> <span class="va">$i</span>
+<span class="kw">done</span>
+<span class="co"># Outputs:</span>
+<span class="co">#  1</span>
+<span class="co">#  2</span>
+<span class="co">#  3</span></code></pre></div>
+<p>The loop iterates once for every value placed after the <code>in</code> keyword. Each time through the loop, the variable (between <code>for</code> and <code>in</code>) will be equal to one of the values placed after <code>in</code>.</p>
+<p>This is powerful because you place anything in that spot that the shell knows how to manipulate:</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co"># Show the first line of every text file in the current directory.</span>
+<span class="kw">for</span> <span class="ex">i</span> in *.txt
+<span class="kw">do</span>
+    <span class="fu">head</span> -n 1 <span class="va">$i</span>
+<span class="kw">done</span></code></pre></div>
+<p>or even</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co"># Make a directory inside ~/assignments for every</span>
+<span class="co"># currently-available assignment.</span>
+<span class="kw">for</span> <span class="ex">assignment</span> in <span class="va">$(</span><span class="ex">cse80task</span> available<span class="va">)</span>
+<span class="kw">do</span>
+    <span class="fu">mkdir</span> ~/assignments/<span class="va">$assignment</span>
+<span class="kw">done</span></code></pre></div>
+<p>This means that <code>for</code> in bash is really more of a <code>foreach</code>. If you want to do the typical <code>for</code> thing (and give the variable an integer), you have to list the integers for bash. Luckily, there are a few ways to do that:</p>
+<ul>
+<li>The <code>seq [first [incr]] last</code> command generates a relevant sequence of numbers. For instance, <code>seq 3</code> will generate three lines: <code>1</code>, <code>2</code>, <code>3</code>.</li>
+<li>Bash can generate its own sequences, with the somewhat-odd syntax <code>{N..M}</code> for a sequence from integer <code>N</code> to integer <code>M</code>, inclusive.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co"># Print all the numbers from 1 to 100, twice.</span>
+<span class="kw">for</span> <span class="ex">i</span> in <span class="va">$(</span><span class="fu">seq</span> 1 100<span class="va">)</span>
+<span class="kw">do</span>
+    <span class="bu">echo</span> <span class="va">$i</span>
+<span class="kw">done</span>
+<span class="kw">for</span> <span class="ex">i</span> in <span class="dt">{1..100}</span>
+<span class="kw">do</span>
+    <span class="bu">echo</span> <span class="va">$i</span>
+<span class="kw">done</span></code></pre></div>
+<h3 id="conditionals">Conditionals</h3>
+<p>Conditionals in shell are a bit funny, in that they tie into some of the same mechanisms we've seen so far. The general syntax for an <code>if</code> statement is:</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">if</span> <span class="ex">CONDITION</span>
+<span class="kw">then</span>
+    <span class="co"># any shell code here</span>
+<span class="kw">elif</span> <span class="ex">CONDITION</span>
+    <span class="co"># any shell code here</span>
+<span class="kw">else</span>
+    <span class="co"># any shell code here</span>
+<span class="kw">fi</span></code></pre></div>
+<p>If you want, you can omit the <code>elif</code> and <code>else</code> portions of the block, so long as the conditional ends with the <code>fi</code> (which is 'if' backwards).</p>
+<p>The <code>CONDITION</code> above can be any executable that bash knows about. If it exits with an exit status of zero (i.e. without an error), the condition is considered 'true'. Any non-zero return status is false.</p>
+<p>That means we can do the following:</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">if</span> <span class="fu">mkdir</span> <span class="va">$DIR_TO_CREATE</span>
+<span class="kw">then</span>
+    <span class="bu">echo</span> <span class="st">&quot;Directory created.&quot;</span>
+<span class="kw">else</span>
+    <span class="bu">echo</span> <span class="st">&quot;Directory creation failed. :-(&quot;</span>
+<span class="kw">fi</span></code></pre></div>
+<h3 id="testing-your-own-conditions">Testing your own conditions</h3>
+<p>Bash (and most shells) introduce some special-sauce to make a bunch of common operations easier, since we often don't have a program that tests exactly what we want already.</p>
+<p><strong>In Bash (not other shells)</strong>, the common syntax for this is <code>[[ EXPR ]]</code>, where <code>EXPR</code> is an expression specific to the test you're running. This can be thought of as having a program called <code>[[</code>, which requires some special arguments.</p>
+<p><strong>Two notes about syntax:</strong></p>
+<ol style="list-style-type: decimal">
+<li>If you find yourself reading other people's code, you may also see something like <code>[ EXPR ]</code> (note the single brackets). This is the official POSIX-compliant syntax, but it has fewer operations. If you're using Bash, you should be using the <code>[[</code> syntax.</li>
+<li>You <em>must</em> have spaces between the brackets and the expression. <code>[[EXPR]]</code> will fail. This is because the system treats <code>[[</code> like a program, and <code>[[EXPR</code> would be a different program! (Insofar as I can tell, requiring space before the closing brackets is just to maintain symmetry).</li>
+</ol>
+<p>The expression inside the brackets can either be unary (i.e. &quot;is this file executable?&quot;) or binary (&quot;is this variable equal to that variable?&quot;).</p>
+<h5 id="conditional-expressions">Conditional expressions</h5>
+<p>One common operator is <code>-e</code>, a unary operator indicating whether a file exists. If you were writing a blog generator, for instance, you might want to include a special header on your page, but only if that header file exists:</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">if [[</span> <span class="ot">-e</span> <span class="va">$HEADER_FILE</span><span class="kw"> ]]</span>
+<span class="kw">then</span>
+    <span class="fu">cat</span> <span class="va">$HEADER_FILE</span>
+<span class="kw">fi</span>
+<span class="ex">...</span></code></pre></div>
+<h5 id="not">NOT</h5>
+<p>You can precede commands with the unary <code>!</code> operator, which negates whatever follows it. You could, for instance, do the following:</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co"># If there isn&#39;t an author file, write my username to it.</span>
+<span class="kw">if [[</span> <span class="ot">!</span> <span class="ot">-e</span> author<span class="kw"> ]]</span>
+<span class="kw">then</span>
+    <span class="fu">whoami</span> <span class="op">&gt;</span> author
+<span class="kw">fi</span>
+<span class="ex">...</span></code></pre></div>
+<h5 id="other-operators">Other operators</h5>
+<p>There are a bunch of file testing operators because, as it turns out, files make up a big part of what you do with shell. There are, however, other operators too:</p>
+<ul>
+<li>Basic string comparisons can be done with the <code>==</code> operator (e.g. <code>[[ &quot;apple&quot; == &quot;$fruit&quot; ]]</code>). You can even use wildcards, if you're clever: <code>[[ &quot;$fruit&quot; == *berry ]]</code>.</li>
+<li>Numerical comparisons use operators like <code>-gt</code> for <strong>g</strong>reater <strong>t</strong>han, e.g. <code>[[ &quot;$n&quot; -gt 3 ]]</code>. The other operators are named similarly, but are always two characters long.</li>
+</ul>
+<p>The full list of conditional flags is available in the Bash <code>man</code>-page. Search for <code>^CONDITIONAL EXPRESSIONS</code> (we'll explain that <code>^</code> at a later point).</p>
+<h5 id="combining-operators">Combining operators</h5>
+<p>You can combine operators with the operators <code>&amp;&amp;</code> (for 'and') and <code>||</code> (for 'or'). Thus, it's totally valid to do:</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">if [[</span> <span class="va">$n_users</span> <span class="ot">-ge</span> 1 &amp;&amp; <span class="va">$n_files_open</span> <span class="ot">-lt</span> 20<span class="kw"> ]]</span>; <span class="kw">then</span> <span class="ex">...</span></code></pre></div>
+<p>This condition executes only if the number of users is greater than or equal to (<code>-ge</code>) one AND the number of files open is less than 20.</p>
+<h3 id="conditional-execution-outside-of-s...">Conditional execution outside of <code>[[ ]]</code>s...</h3>
+<p>So far in this class, we've covered the output redirection operators (<code>&gt;</code>, <code>&gt;&gt;</code>), the pipe operator (<code>|</code>), and the semicolon (<code>;</code>). These operators work not within the context of <code>[[ ]]</code>, but just between commands.</p>
+<p>It turns out that <code>&amp;&amp;</code> and <code>||</code> can work between commands too. This leads to a method of easily only running subsequent commands if the preceding command exited with a zero exit status (for <code>and</code>) or only if it exited with a non-zero exit status (for <code>or</code>).</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co"># If the required file doesn&#39;t exist, print an error</span>
+<span class="co"># exit w/ exit code 1</span>
+<span class="kw">[[</span> <span class="ot">-e</span> <span class="va">$RQD_FILE</span><span class="kw"> ]]</span> <span class="kw">||</span> <span class="bu">echo</span> <span class="st">&quot;ERROR: Missing file&quot;</span> <span class="kw">&amp;&amp;</span> <span class="bu">exit</span> 1</code></pre></div>
+<p>To avoid making lines crazy-long, unless you only have a command or two to run, we recommend using the full <code>if</code>-style conditional to maintain clarity and readability.</p>
+<h3 id="while-loops">While loops</h3>
+<p>Now that we have conditionals, we can revisit loops. <code>while</code> loops execute so long as a condition remains true. The syntax is:</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">while</span> <span class="ex">CONDITION</span>
+<span class="kw">do</span>
+    <span class="ex">...</span>
+<span class="kw">done</span></code></pre></div>
+<p>You can use any program's exit status, or any conditional expression discussed in the section above in a <code>while</code> loop's <code>CONDITION</code>.</p>
+<h2 id="piping-into-loops">Piping into Loops</h2>
+<p>Perhaps one of the most compelling use cases for <code>while</code> is when you need to do line-by-line processing of some input. In this case, you can pipe data into your loop, and read it in one line at a time with the <code>read</code> command:</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co"># Input lines of the form &#39;TYPE CONTACT&#39;</span>
+<span class="co">#</span>
+<span class="co"># Where TYPE is either &#39;web&#39; or &#39;mail&#39;</span>
+<span class="co">#  and &#39;CONTACT&#39; is a URL (for web) or email address (for mail)</span>
+<span class="co">#</span>
+<span class="co"># For each contact, send them the info in the appropriate way.</span>
+<span class="fu">cat</span> <span class="va">$NOTIFICATION_RECIPIENTS</span> <span class="kw">|</span> <span class="kw">while</span> <span class="bu">read</span> <span class="va">line</span>
+<span class="kw">do</span>
+    <span class="kw">if [[</span> <span class="st">&quot;</span><span class="va">$line</span><span class="st">&quot;</span> <span class="ot">==</span> web*<span class="kw"> ]]</span>; <span class="kw">then</span>
+        <span class="co"># Send the info to the website</span>
+    <span class="kw">elif [[</span> <span class="st">&quot;</span><span class="va">$line</span><span class="st">&quot;</span> <span class="ot">==</span> mail*<span class="kw"> ]]</span>; <span class="kw">then</span>
+        <span class="co"># Email them the info</span>
+    <span class="kw">fi</span>
+<span class="kw">done</span></code></pre></div>
+<h3 id="a-real-life-example">A real-life example</h3>
+<p>An early version of the autograder used in this class split each assignment into its own directory (titled <code>999_example</code>), and a single executable program within that directory (e.g. <code>ASSIGNMENT_DIRECTORY/999_example/run_checker.sh</code>). We 'activated' an assignment by marking it as executable (<code>chmod +x ASSIGNMENT_FILE</code>), and de-activated it by marking it not executable.</p>
+<p>The <code>cse80task</code> program would locate these files, and do whatever it needed to do. When you ran <code>cse80task available</code>, it did something very much like this:</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co"># for each file/dir contained in directories in ASSIGNMENTS_DIR</span>
+<span class="kw">for</span> <span class="fu">file</span> in <span class="va">$ASSIGNMENTS_DIR</span>/*/*<span class="kw">;</span> <span class="kw">do</span>
+    <span class="co"># if it&#39;s a file and an executable</span>
+    <span class="kw">if [[</span> <span class="ot">-f</span> <span class="st">&quot;</span><span class="va">$file</span><span class="st">&quot;</span> &amp;&amp; <span class="ot">-x</span> <span class="st">&quot;</span><span class="va">$file</span><span class="st">&quot;</span><span class="kw"> ]]</span>; <span class="kw">then</span>
+        <span class="co"># print out just the name of the directory it&#39;s in:</span>
+        <span class="co"># dirname removes the file&#39;s name from the path, then</span>
+        <span class="co"># basename removes all except for the final file/dir name</span>
+        <span class="bu">echo</span> <span class="va">$(</span><span class="fu">basename</span> <span class="va">$(</span><span class="fu">dirname</span> <span class="va">$file))</span>
+    <span class="kw">fi</span>
+<span class="kw">done</span></code></pre></div>
+<h2 id="additional-topics-covered-in-class">Additional topics covered in class</h2>
+<p>In class, in addition to the topics above, we also covered basic use of:</p>
+<ul>
+<li><code>grep</code></li>
+<li><code>sed</code></li>
+<li><code>cut</code></li>
+</ul>
+<p>Please see the command reference page on the website for a discussion of these tools.</p>
+</body>
+</html>
