@@ -22,6 +22,7 @@ YOUR_SCRIPT.sh`.
 
 In the words of Douglas McIlroy, the original creator of the pipelining
 interface in Unix/Linux:
+
 > This is the Unix philosophy: Write programs that do one thing and do it well.
 > Write programs to work together. Write programs to handle text streams,
 > because that is a universal interface.
@@ -45,8 +46,8 @@ The shell is able to do that because the program is writing its output to a
 place that the shell expects. The shell has to make the decision to show
 output to you, write it to a file, or do something else entirely.
 
-What we're about to learn is, essentially, how and why we tell the shell to
-connect this, and other, output channels in ways that are advantageous to us. As
+We will learn how and why we tell the shell to
+connect this (and other) output channels in ways that are advantageous to us. As
 a result, it's important to know what we're working with.
 
 ##### `stdout`
@@ -77,7 +78,7 @@ In addition to the output redirection operators, the shell lets you leverage the
 fact that most programs accept input from `stdin` and write output to `stdout`
 to let you chain programs together.
 
-The `|` (pipe) operator allows you to do just that-- provide the output of one
+The `|` (pipe) operator allows you to do just that&mdash;provide the output of one
 program as the input to the next. This allows you to build up pretty
 sophisticated capabilities pretty quickly.
 
@@ -181,7 +182,7 @@ shell can do.
 
 ### The For loop
 
-The `for` loop that looks like this:
+The `for` loop looks like this:
 
 ~~~ {.sh}
 for i in 1 2 3
@@ -198,7 +199,7 @@ The loop iterates once for every value placed after the `in` keyword. Each
 time through the loop, the variable (between `for` and `in`) will be equal to
 one of the values placed after `in`.
 
-This is powerful because you place anything in that spot that the shell knows
+This is powerful because you can place anything in that spot that the shell knows
 how to manipulate:
 
 ~~~ {.sh}
@@ -294,10 +295,11 @@ arguments.
    using Bash, you should be using the `[[` syntax.
 1. You *must* have spaces between the brackets and the expression.
    `[[EXPR]]` will fail. This is because the system treats `[[` like a program,
-   and `[[EXPR` would be a different program! (Insofar as I can tell, requiring
-   space before the closing brackets is just to maintain symmetry).
+   and `[[EXPR` would be a different program! Similarly, `EXPR]]` would be
+   parsed as a single argument, and the `[[` command expects its final
+   argument to be just `]]`.
 
-The expression inside the brackets can either be unary (i.e. "is this file
+The expression inside the brackets can either be unary (e.g. "is this file
 executable?") or binary ("is this variable equal to that variable?").
 
 ##### Conditional expressions
