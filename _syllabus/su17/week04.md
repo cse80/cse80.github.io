@@ -8,8 +8,8 @@ lectureTopics:
   - What is a version control system?
   - Comparisons of different VCS
   - Basic Git
-# homeworkTopics:
-#   - TBD
+homeworkTopics:
+  - Finish assignment 009 by next lecture
 # advancedTopics:
 #   - TBD
 lectureSummary:

@@ -6,8 +6,8 @@ solutionRelease: 2017-07-12 9:30:00 PDT
 title: "Pipelining, Regex, and Scripting"
 lectureTopics:
   - Pipelining, regex, and scripting
-# homeworkTopics:
-#   - TBD
+homeworkTopics:
+  - Finish assignments 006 and 008 by next lecture
 # advancedTopics:
 #   - TBD
 lectureSummary:
