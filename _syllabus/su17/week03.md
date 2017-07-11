@@ -7,7 +7,7 @@ title: "Pipelining, Regex, and Scripting"
 lectureTopics:
   - Pipelining, regex, and scripting
 homeworkTopics:
-  - Finish assignments 006 and 008 by next lecture
+  - Finish assignments 006 and 008
 # advancedTopics:
 #   - TBD
 lectureSummary:

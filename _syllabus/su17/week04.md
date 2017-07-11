@@ -9,7 +9,7 @@ lectureTopics:
   - Comparisons of different VCS
   - Basic Git
 homeworkTopics:
-  - Finish assignment 009 by next lecture
+  - Finish assignment 009
 # advancedTopics:
 #   - TBD
 lectureSummary:
