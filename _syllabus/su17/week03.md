@@ -10,5 +10,7 @@ homeworkTopics:
   - Finish assignments 006 and 008
 # advancedTopics:
 #   - TBD
-lectureSummary:
+lectureSummary: |
+  [This document](/static/su17/pipelining.html) is a (hopefully) useful
+  reference for most of what we covered today on pipelining.
 ---
