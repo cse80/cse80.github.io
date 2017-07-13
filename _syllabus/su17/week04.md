@@ -12,5 +12,15 @@ homeworkTopics:
   - Finish assignment 009
 # advancedTopics:
 #   - TBD
-lectureSummary:
+lectureSummary: |
+Command refernece is [here](/static/notes/basic_git.html)
+
+Since there are many many high quality reference documents for git,
+we'll link one
+[here](https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html)
+but feel free to search around.
+
+homeworkTopics:
+ - Finish assignments 009 and 010
+ - Assignment 010 doesn't require more git than we discussed in class.
 ---
