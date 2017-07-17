@@ -1,23 +1,23 @@
 
-# Baisc tar usage
+# Basic tar usage
 
 `tar` (Tape ARchive) is a powerful tool that bundles files into a
 single archive file. By passing various additonal options, `tar` can
 also use compression.
 
 We discussed the following flags in `tar`
- * x -- eXtract files from a tar archive
- * c -- Create a tar archive
- * v -- verbose mode, print out files as it uses them
- * f -- use files as input rather than stdin and stdout
- * C -- perform an operation as if you changed directory to the given directory
+ * `x` -- eXtract files from a tar archive
+ * `c` -- Create a tar archive
+ * `v` -- verbose mode, print out files as it uses them
+ * `f` -- use files as input rather than stdin and stdout
+ * `C` -- perform an operation as if you changed directory to the given directory
 
 We discussed the following compression flags for `tar`
- * z -- use gzip compression or decompression
- * j -- use bzip2 compression or decompression
- * J -- use xz compression or decompression
+ * `z` -- use gzip compression or decompression
+ * `j` -- use bzip2 compression or decompression
+ * `J` -- use xz compression or decompression
 
-## Tar examples
+### Tar examples
 
 `tar -czvf an_archive.tgz directory_with_files/`
  * (-f) operates on files rather than stdin/stdout
@@ -71,7 +71,7 @@ Both `readlink` and `ls -l` will indicate where a symbolic link points.
  * s -- Symbolic, always use this flag
 
 
-## ln examples
+### ln examples
 
 `ln -s datafile_1 data_link`
  * Creates a symbolic link in the current directory called `data_link`
@@ -121,7 +121,7 @@ Example:
    permissions only
 
 
-## Changing permissions
+### Changing permissions
 
 `chmod` (CHange MODe) changes the permissions on a file.
 
