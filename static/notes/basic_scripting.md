@@ -128,11 +128,11 @@ executable file with that name in any of the directories it knows to look in
 program is located, you can find it by running `which COMMAND`, e.g.
 `which vim` should yield `/usr/bin/vim` on our systems.
 
-## Subshells
+## Command substitution
 
 It's often useful to grab the output of a command, and either store it into a
 variable, or use it as an argument to a subsequent command. You can do that with
-a subshell. The syntax looks like this:
+a command substitution. The syntax looks like this:
 ``` {.bash}
 this_dir_contents=$(ls)
 ```
