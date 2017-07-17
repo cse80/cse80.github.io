@@ -138,6 +138,15 @@ pre code {
   display: block;
 }
 
+p code {
+  color: #444;
+  padding: .3em;
+  margin: .2em;
+  border: 1px solid #fdd;
+  border-radius: .3em;
+  background: #fff6f6;
+}
+
 pre {
   white-space: pre;
   white-space: pre-wrap;

@@ -2,8 +2,8 @@
 title:  'Shell Powertools'
 ...
 
-Pipelines and looping are what actually make shell powerful, because they allow
-us to glue together small pieces to do bigger, more interesting things.
+Pipelines and looping are what make shell powerful, because they allow us to
+glue together small pieces to do bigger, more interesting things.
 
 Everything we've learned up until now (except maybe editors) is really mostly
 included to facilitate this material.
@@ -32,9 +32,10 @@ So what does he mean by universal interface?
 He means that humans understand readable text, and as a result, we're good at
 coding around it. Programs that rely on text-based input and output, rather than
 relying on some crazy binary format (type `less $(which less)` to see an
-example) have the ability to interconnect naturally and natively. If you choose
-a binary format, every program has to be specifically written to support that
-format, and if you don't, it's hard to interconnect them!
+example of a human-unfriendly binary format) have the ability to interconnect
+naturally and natively. If you choose a binary format, every program has to be
+specifically written to support that format, and if you don't, it's hard to
+interconnect them!
 
 ### `stdout`, `stderr`, `stdin`.
 
@@ -46,9 +47,9 @@ The shell is able to do that because the program is writing its output to a
 place that the shell expects. The shell has to make the decision to show
 output to you, write it to a file, or do something else entirely.
 
-We will learn how and why we tell the shell to
-connect this (and other) output channels in ways that are advantageous to us. As
-a result, it's important to know what we're working with.
+We will learn how and why we tell the shell to connect this (and other) output
+channels in ways that are advantageous to us. As a result, it's important to
+know what we're working with.
 
 ##### `stdout`
 
