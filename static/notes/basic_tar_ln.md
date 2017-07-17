@@ -44,6 +44,17 @@ We discussed the following compression flags for `tar`
  * We referred to this type of tarfile as a 'non-rooted' tarfile since it
  has multiple independent files as inputs
 
+`tar -czvf an_archive.tgz -C outer_dir/ directory_with_files/`
+ * (-f) operates on files rather than stdin/stdout
+ * (-c) Creates a new archive called `an_archive.tgz`
+ * (-z) Compresses that archive using `gzip`
+ * (-v) print out all the files you are putting in
+ * (-C) operate from `outer_dir` instead of the current directory
+ * Adds everything inside of `outer_dir/directory_with_files/`
+   including subdirectories
+ * The inclusion of this -C flag allows us to make a tarfile with
+   files inside of `outer_dir` without including `outer_dir` itself in
+   the archive.
 
 # Making symbolic links
 
