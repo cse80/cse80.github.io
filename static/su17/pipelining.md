@@ -336,7 +336,8 @@ operators too:
 
  - Basic string comparisons can be done with the `==` operator (e.g.
    `[[ "apple" == "$fruit" ]]`). You can even use wildcards, if you're clever:
-   `[[ "$fruit" == *berry ]]`.
+   `[[ "$fruit" == *berry ]]` (**NOTE:** You can **NOT** put wildcards in
+   quotes).
  - Numerical comparisons use operators like `-gt` for **g**reater **t**han, e.g.
    `[[ "$n" -gt 3 ]]`. The other operators are named similarly, but are always
    two characters long.
