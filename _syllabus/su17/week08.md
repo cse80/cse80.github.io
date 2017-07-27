@@ -6,8 +6,8 @@ solutionRelease: 2017-07-31 9:30:00 PDT
 title: "Regular expressions and git merging"
 # lectureTopics:
 #   - TBD
-# homeworkTopics:
-#   - TBD
+homeworkTopics:
+  - Complete 017, 018, 019
 # advancedTopics:
 #   - TBD
 lectureSummary:
