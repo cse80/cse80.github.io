@@ -10,5 +10,6 @@ homeworkTopics:
   - Complete 017, 018, 019
 # advancedTopics:
 #   - TBD
-lectureSummary:
+lectureSummary: |
+  [Here](https://en.wikibooks.org/wiki/Regular_Expressions/POSIX-Extended_Regular_Expressions) is a handy reference for regular expressions (specifically, POSIX extended regex).
 ---

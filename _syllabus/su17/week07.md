@@ -1,7 +1,7 @@
 ---
 week: 7
 dates: 07/24/2017
-title: "Midterm & Runing your own linux"
+title: "Midterm & Running your own linux"
 # lectureTopics:
 #   - TBD
 # homeworkTopics:

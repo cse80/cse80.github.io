@@ -14,5 +14,5 @@ homeworkTopics:
 # advancedTopics:
 #   - TBD
 lectureSummary: |
-  Command reference is [here](/static/notes/basic_tar_ln.html)
+  Command reference is [here](/static/notes/basic_tar_ln.html).
 ---

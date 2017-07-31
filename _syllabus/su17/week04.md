@@ -13,7 +13,7 @@ homeworkTopics:
 # advancedTopics:
 #   - TBD
 lectureSummary: |
-  Command reference is [here](/static/notes/basic_git.html)
+  Command reference is [here](/static/notes/basic_git.html).
 
   Since there are many many high quality reference documents for git,
   we'll link one
